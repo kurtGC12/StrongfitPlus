@@ -1,0 +1,199 @@
+
+<main class="main">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+    <img src="src/assets/img/gym.jpg" alt="gym" data-aos="fade-in">
+
+    <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2>Bienvenido a StrongFit</h2>
+          <p>¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. </p>
+          <a routerLink="/registro" class="btn-get-started">Inscríbete</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-100 h-100">
+            <img src="src/assets/img/ad.webp" class="img-fluid w-100 h-100 object-fit-cover" alt="">
+          </div>
+        </div>
+
+        <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">
+          <h3>Quienes somos</h3>
+          <p>
+            Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral...
+          </p>
+          <ul>
+            <li>
+              <i class="bi bi-clipboard-heart-fill"></i>
+              <div>
+                <h5>Entrenamiento personalizado</h5>
+                <p>Diseñamos planes de entrenamiento adaptados a tus necesidades...</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-lungs-fill"></i>
+              <div>
+                <h5>Salud y bienestar</h5>
+                <p>Creemos que la salud va más allá del ejercicio...</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-people-fill"></i>
+              <div>
+                <h5>Comunidad y compromiso</h5>
+                <p>Más que un lugar para entrenar, somos una comunidad...</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué elegirnos -->
+  <section id="why-us" class="why-us section">
+    <div class="container section-title" data-aos="fade-up">
+      <div><span>¿Por qué</span> <span class="description-title">elegirnos?</span></div>
+    </div>
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-item">
+            <span>01</span>
+            <h4>Equipo profesional</h4>
+            <p>Entrenadores certificados con atención personalizada...</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-item">
+            <span>02</span>
+            <h4>Resultados medibles</h4>
+            <p>Diseñamos rutinas con metas reales y evaluaciones constantes...</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-item">
+            <span>03</span>
+            <h4>Ambiente seguro y motivador</h4>
+            <p>Promovemos una cultura de respeto y superación...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section id="stats" class="stats section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center">
+            <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Sedes</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1546" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Miembros activos</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center">
+            <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Entrenadores certificados</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center">
+            <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Clases mensuales</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="call-to-action" class="call-to-action section dark-background">
+    <img src="src/assets/img/gyminterior.jpg" alt="">
+    <div class="container">
+      <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-xl-10">
+          <div class="text-center">
+            <h3>Mantente en Competencia</h3>
+            <p>TU LUGAR PARA EL CAMBIO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="gallery" class="section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Galería</h2>
+      <div><span>Explora Nuestro</span> <span class="description-title">Gimnasio</span></div>
+    </div>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" *ngFor="let i of [1,2,3,4,5,6]; let index = index">
+          <img src="'src/assets/img/gym.jpg'" class="gallery-img" alt="Gimnasio">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes -->
+  <section id="faq" class="faq section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Preguntas Frecuentes</h2>
+      <div><span>Resuelve tus dudas en nuestras</span> <span class="description-title">Preguntas Frecuentes</span></div>
+    </div>
+    <!-- Aquí van los faq-item como en el HTML original -->
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="contact section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Contacto</h2>
+      <div><span>Contactate con</span> <span class="description-title">Nosotros</span></div>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="info-item d-flex">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Teléfono</h3>
+              <p>+569 XXXX XXXX</p>
+            </div>
+          </div>
+          <div class="info-item d-flex">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email</h3>
+              <p>ejemplo&#64;gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <!-- formulario de contacto omitido o adaptado si se usa backend -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

@@ -1,0 +1,24 @@
+<header class="header d-flex align-items-center sticky-top">
+  <div class="container-fluid container-xl d-flex justify-content-between align-items-center">
+    <a routerLink="/inicio" class="logo d-flex align-items-center">
+      <img src="src/assets/img/logo.png" alt="StrongFit" style="height: 50px;">
+      <h1 class="sitename ms-2 mb-0">StrongFit</h1>
+    </a>
+    <nav class="navmenu">
+      <ul>
+        <li><a routerLink="/servicios">Servicios</a></li>
+        <li><a routerLink="/planes">Planes</a></li>
+        <li><a routerLink="/perfil">Mi Perfil</a></li>
+      </ul>
+    </nav>
+    <div class="d-flex align-items-center gap-3">
+      <span class="text-white fw-bold">{{ nombreUsuario }}</span>
+      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="footer dark-background text-center py-4">
+  <p class="text-white mb-0">© 2025 StrongFit. Todos los derechos reservados.</p>

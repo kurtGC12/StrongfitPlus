@@ -1,0 +1,86 @@
+<main class="container my-5">
+  <h1 class="text-center mb-4">Carrito de Compras</h1>
+
+  <div *ngIf="carrito.length === 0" class="alert alert-info text-center">
+    Tu carrito está vacío.
+  </div>
+
+  <div *ngIf="carrito.length > 0">
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of carrito; let i = index">
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>${{ item.precio | number:'1.0-0' }}</td>
+          <td>${{ (item.precio * item.cantidad) | number:'1.0-0' }}</td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="eliminar(i)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-end">
+      <h4>Total: ${{ total | number:'1.0-0' }}</h4>
+      <button class="btn btn-success me-2" (click)="finalizarCompra()">Finalizar compra</button>
+      <button class="btn btn-danger" (click)="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+  </div>
+
+  <!-- Pago Simulado -->
+<div class="card mt-4" *ngIf="carrito.length > 0 && !pagoExitoso">
+  <div class="card-header">
+    <h5>Simular pago</h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="formularioPago" (ngSubmit)="pagar()">
+      <div class="mb-3">
+        <label>Nombre completo</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        <small *ngIf="formularioPago.get('nombre')?.invalid && formularioPago.get('nombre')?.touched" class="text-danger">
+          Nombre obligatorio.
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <label>Correo electrónico</label>
+        <input type="email" class="form-control" formControlName="correo">
+        <small *ngIf="formularioPago.get('correo')?.invalid && formularioPago.get('correo')?.touched" class="text-danger">
+          Correo inválido.
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <label>Medio de pago</label>
+        <select class="form-select" formControlName="medioPago">
+          <option value="">Seleccione</option>
+          <option value="transferencia">Transferencia</option>
+          <option value="tarjeta">Tarjeta de crédito</option>
+        </select>
+        <small *ngIf="formularioPago.get('medioPago')?.invalid && formularioPago.get('medioPago')?.touched" class="text-danger">
+          Seleccione un medio de pago.
+        </small>
+      </div>
+
+      <button class="btn btn-success" type="submit" [disabled]="formularioPago.invalid">
+        Pagar ahora
+      </button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="pagoExitoso" class="alert alert-success mt-4">
+  ✅ ¡Pago simulado realizado con éxito! Te llegará un correo a <strong>{{ formularioPago.value.correo }}</strong>
+</div>
+</main>

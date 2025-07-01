@@ -1,0 +1,31 @@
+<main class="container my-5">
+  <div class="table-responsive">
+    <table class="table table-striped" id="tabla-usuarios">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Usuario</th>
+          <th>Correo</th>
+          <th>Fecha Nac.</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se llenará dinámicamente con Angular -->
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.nombre }}</td>
+          <td>{{ usuario.usuario }}</td>
+          <td>{{ usuario.correo }}</td>
+          <td>{{ usuario.fechaNacimiento }}</td>
+          <td>{{ usuario.rol }}</td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="eliminar(usuario.id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

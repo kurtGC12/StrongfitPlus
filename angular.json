@@ -25,7 +25,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/main.css"
             ]
           },
           "configurations": {
@@ -82,7 +83,30 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+               "src/assets/css/main.css",
+               "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/aos/aos.css",
+             "src/assets/vendor/glightbox/css/glightbox.min.css",
+              "src/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+            ],
+            "scripts": [
+                 "src/assets/js/login.js", 
+                 "src/assets/js/recuperar.js",
+                 "src/assets/js/main.js",
+                 "src/assets/js/login.js",
+                 "src/assets/js/registro.js",
+                 "src/assets/js/recuperar.js",
+                 "src/assets/js/perfil.js",
+                 "src/assets/js/admin.js",
+                 "src/assets/js/carrito.js",
+                 "src/assets/js/inicio.js",
+                 "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+                "src/assets/vendor/aos/aos.js",
+                "src/assets/vendor/glightbox/js/glightbox.min.js",
+                 "src/assets/vendor/purecounter/purecounter_vanilla.js",
+                "src/assets/vendor/swiper/swiper-bundle.min.js"
             ]
           }
         }

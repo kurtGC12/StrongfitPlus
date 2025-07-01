@@ -1,0 +1,455 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>strongfit-plus documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">strongfit-plus documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ServiciosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/servicios/servicios.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-servicios</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./servicios.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./servicios.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+
+
+/**
+   * @description Componente que muestras los servicios del gym.
+   */
+@Component({
+  selector: &#x27;app-servicios&#x27;,
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: &#x27;./servicios.html&#x27;,
+  styleUrls: [&#x27;./servicios.css&#x27;]
+})
+export class ServiciosComponent {}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;main container&quot;&gt;
+
+  &lt;!-- Título --&gt;
+  &lt;div class&#x3D;&quot;page-title light-background mb-4&quot;&gt;
+    &lt;div class&#x3D;&quot;d-lg-flex justify-content-between align-items-center&quot;&gt;
+      &lt;h1 class&#x3D;&quot;mb-2 mb-lg-0&quot;&gt;Nuestros Servicios&lt;/h1&gt;
+      &lt;nav class&#x3D;&quot;breadcrumbs&quot;&gt;
+        &lt;ol&gt;
+          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+          &lt;li class&#x3D;&quot;current&quot;&gt;Servicios&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Servicios --&gt;
+  &lt;section id&#x3D;&quot;services&quot; class&#x3D;&quot;services section&quot;&gt;
+    &lt;div class&#x3D;&quot;section-title text-center&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+      &lt;h2&gt;Servicios&lt;/h2&gt;
+      &lt;div&gt;&lt;span&gt;Conoce nuestros&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Servicios&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6 service-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;bi bi-bicycle&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div&gt;
+          &lt;h4 class&#x3D;&quot;title&quot;&gt;Sala de Cycling&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;Bicicletas de alto nivel, sistema tipo cinema y entrenadores certificados.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6 service-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;bi bi-lightning&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div&gt;
+          &lt;h4 class&#x3D;&quot;title&quot;&gt;Entrenamiento Funcional&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;Área libre con SYNRGY 360 XL, Glute Press y piso especial.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6 service-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;400&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;bi bi-heart-pulse&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div&gt;
+          &lt;h4 class&#x3D;&quot;title&quot;&gt;Zona Cardiovascular&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;Trotadoras, elípticas y más, con música o TV para acompañarte.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6 service-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;600&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;bi bi-door-closed&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div&gt;
+          &lt;h4 class&#x3D;&quot;title&quot;&gt;Camarines y Vestidores&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;Lockers, duchas, limpieza y confort para tu rutina diaria.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6 service-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;800&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;bi bi-clipboard2-pulse&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div&gt;
+          &lt;h4 class&#x3D;&quot;title&quot;&gt;Evaluación Física&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;INBODY270 + test físico para personalizar tu entrenamiento.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6 service-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;1000&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;bi bi-phone&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div&gt;
+          &lt;h4 class&#x3D;&quot;title&quot;&gt;App StrongFit&lt;/h4&gt;
+          &lt;p class&#x3D;&quot;description&quot;&gt;Consulta clases, planes, resultados y ofertas desde tu celular.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Detalle del gimnasio --&gt;
+  &lt;section id&#x3D;&quot;service-details&quot; class&#x3D;&quot;service-details section&quot;&gt;
+    &lt;div class&#x3D;&quot;row gy-4 align-items-center text-center&quot;&gt;
+
+      &lt;!-- Imágenes izquierda --&gt;
+      &lt;div class&#x3D;&quot;col-lg-3 d-flex flex-column gap-3&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+        &lt;img src&#x3D;&quot;src/assets/img/1.jpg&quot; alt&#x3D;&quot;Imagen 1&quot; class&#x3D;&quot;img-fluid rounded shadow&quot;&gt;
+        &lt;img src&#x3D;&quot;src/assets/img/2.jpg&quot; alt&#x3D;&quot;Imagen 2&quot; class&#x3D;&quot;img-fluid rounded shadow&quot;&gt;
+        &lt;img src&#x3D;&quot;src/assets/img/3.jpg&quot; alt&#x3D;&quot;Imagen 3&quot; class&#x3D;&quot;img-fluid rounded shadow&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Texto --&gt;
+      &lt;div class&#x3D;&quot;col-lg-6&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+        &lt;h3&gt;Nuestro gimnasio&lt;/h3&gt;
+        &lt;p&gt;
+          Contamos con profesores expertos, clases variadas, equipos de primer nivel y tecnología moderna.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Desde entrenamiento funcional hasta yoga, cada espacio está diseñado para inspirarte y motivarte.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Queremos que cada visita sea una experiencia positiva y transformadora.
+        &lt;/p&gt;
+        &lt;img src&#x3D;&quot;src/assets/img/ser.jpg&quot; alt&#x3D;&quot;Vista del gimnasio&quot; class&#x3D;&quot;img-fluid w-100 rounded shadow mt-3&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Imágenes derecha --&gt;
+      &lt;div class&#x3D;&quot;col-lg-3 d-flex flex-column gap-3&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;300&quot;&gt;
+        &lt;img src&#x3D;&quot;src/assets/img/4.jpg&quot; alt&#x3D;&quot;Imagen 4&quot; class&#x3D;&quot;img-fluid rounded shadow&quot;&gt;
+        &lt;img src&#x3D;&quot;assets/img/5.png&quot; alt&#x3D;&quot;Imagen 5&quot; class&#x3D;&quot;img-fluid rounded shadow&quot;&gt;
+        &lt;img src&#x3D;&quot;assets/img/6.webp&quot; alt&#x3D;&quot;Imagen 6&quot; class&#x3D;&quot;img-fluid rounded shadow&quot;&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./servicios.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="main container">  <!-- Título -->  <div class="page-title light-background mb-4">    <div class="d-lg-flex justify-content-between align-items-center">      <h1 class="mb-2 mb-lg-0">Nuestros Servicios</h1>      <nav class="breadcrumbs">        <ol>          <li><a routerLink="/">Inicio</a></li>          <li class="current">Servicios</li>        </ol>      </nav>    </div>  </div>  <!-- Servicios -->  <section id="services" class="services section">    <div class="section-title text-center" data-aos="fade-up">      <h2>Servicios</h2>      <div><span>Conoce nuestros</span> <span class="description-title">Servicios</span></div>    </div>    <div class="row gy-4">      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">        <div class="icon"><i class="bi bi-bicycle"></i></div>        <div>          <h4 class="title">Sala de Cycling</h4>          <p class="description">Bicicletas de alto nivel, sistema tipo cinema y entrenadores certificados.</p>        </div>      </div>      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">        <div class="icon"><i class="bi bi-lightning"></i></div>        <div>          <h4 class="title">Entrenamiento Funcional</h4>          <p class="description">Área libre con SYNRGY 360 XL, Glute Press y piso especial.</p>        </div>      </div>      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">        <div class="icon"><i class="bi bi-heart-pulse"></i></div>        <div>          <h4 class="title">Zona Cardiovascular</h4>          <p class="description">Trotadoras, elípticas y más, con música o TV para acompañarte.</p>        </div>      </div>      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">        <div class="icon"><i class="bi bi-door-closed"></i></div>        <div>          <h4 class="title">Camarines y Vestidores</h4>          <p class="description">Lockers, duchas, limpieza y confort para tu rutina diaria.</p>        </div>      </div>      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="800">        <div class="icon"><i class="bi bi-clipboard2-pulse"></i></div>        <div>          <h4 class="title">Evaluación Física</h4>          <p class="description">INBODY270 + test físico para personalizar tu entrenamiento.</p>        </div>      </div>      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="1000">        <div class="icon"><i class="bi bi-phone"></i></div>        <div>          <h4 class="title">App StrongFit</h4>          <p class="description">Consulta clases, planes, resultados y ofertas desde tu celular.</p>        </div>      </div>    </div>  </section>  <!-- Detalle del gimnasio -->  <section id="service-details" class="service-details section">    <div class="row gy-4 align-items-center text-center">      <!-- Imágenes izquierda -->      <div class="col-lg-3 d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay="100">        <img src="src/assets/img/1.jpg" alt="Imagen 1" class="img-fluid rounded shadow">        <img src="src/assets/img/2.jpg" alt="Imagen 2" class="img-fluid rounded shadow">        <img src="src/assets/img/3.jpg" alt="Imagen 3" class="img-fluid rounded shadow">      </div>      <!-- Texto -->      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">        <h3>Nuestro gimnasio</h3>        <p>          Contamos con profesores expertos, clases variadas, equipos de primer nivel y tecnología moderna.        </p>        <p>          Desde entrenamiento funcional hasta yoga, cada espacio está diseñado para inspirarte y motivarte.        </p>        <p>          Queremos que cada visita sea una experiencia positiva y transformadora.        </p>        <img src="src/assets/img/ser.jpg" alt="Vista del gimnasio" class="img-fluid w-100 rounded shadow mt-3">      </div>      <!-- Imágenes derecha -->      <div class="col-lg-3 d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay="300">        <img src="src/assets/img/4.jpg" alt="Imagen 4" class="img-fluid rounded shadow">        <img src="assets/img/5.png" alt="Imagen 5" class="img-fluid rounded shadow">        <img src="assets/img/6.webp" alt="Imagen 6" class="img-fluid rounded shadow">      </div>    </div>  </section></main></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ServiciosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ServiciosComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

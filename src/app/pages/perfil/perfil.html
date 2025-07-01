@@ -1,0 +1,39 @@
+<main class="container my-5">
+  <h1 class="text-center mb-4">Editar Perfil</h1>
+  <form [formGroup]="formulario" (ngSubmit)="guardar()" class="formulario-strongfit" novalidate>
+
+    <div class="mb-3">
+      <label class="form-label">Nombre completo</label>
+      <input type="text" formControlName="nombre" class="form-control"
+             [class.is-invalid]="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
+      <div class="invalid-feedback">Este campo es obligatorio.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" formControlName="usuario" class="form-control"
+             [class.is-invalid]="formulario.get('usuario')?.invalid && formulario.get('usuario')?.touched">
+      <div class="invalid-feedback">Nombre de usuario requerido.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Correo electrónico</label>
+      <input type="email" formControlName="email" class="form-control">
+      <div class="form-text">Este dato no puede modificarse.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Fecha de nacimiento</label>
+      <input type="date" formControlName="fechaNacimiento" class="form-control"
+             [class.is-invalid]="formulario.get('fechaNacimiento')?.invalid && formulario.get('fechaNacimiento')?.touched">
+      <div class="invalid-feedback">Este campo es obligatorio.</div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>
+    </div>
+
+    <div *ngIf="mensaje" class="alert alert-info mt-3 text-center">{{ mensaje }}</div>
+  </form>
+</main>

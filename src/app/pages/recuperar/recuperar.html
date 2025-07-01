@@ -1,0 +1,31 @@
+<main class="container my-5">
+  <h1 class="text-center mb-4">Recuperar Contraseña</h1>
+
+  <form [formGroup]="formulario" (ngSubmit)="recuperar()" class="formulario-strongfit">
+
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo electrónico registrado</label>
+      <input type="email" id="correo" formControlName="correo" class="form-control"
+             [class.is-invalid]="formulario.get('correo')?.invalid && formulario.get('correo')?.touched">
+      <div class="invalid-feedback">Correo inválido</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Nueva contraseña</label>
+      <input type="password" id="password" formControlName="password" class="form-control"
+             [class.is-invalid]="formulario.get('password')?.invalid && formulario.get('password')?.touched">
+      <div class="invalid-feedback">Debe tener entre 8 y 20 caracteres, una mayúscula, un número y un símbolo.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="confirmar" class="form-label">Confirmar nueva contraseña</label>
+      <input type="password" id="confirmar" formControlName="confirmar" class="form-control"
+             [class.is-invalid]="formulario.hasError('noCoinciden') && formulario.get('confirmar')?.touched">
+      <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100" [disabled]="formulario.invalid">Recuperar</button>
+
+    <div *ngIf="mensaje" class="alert alert-info mt-3 text-center">{{ mensaje }}</div>
+  </form>
+</main>

@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" (ngSubmit)="enviar()">
+
+  <input type="email" formControlName="correo" placeholder="Correo">
+  <div *ngIf="loginForm.get('correo')?.touched && loginForm.get('correo')?.invalid">
+    <small *ngIf="loginForm.get('correo')?.errors?.['required']">Correo obligatorio</small>
+    <small *ngIf="loginForm.get('correo')?.errors?.['email']">Formato inválido</small>
+  </div>
+
+  <input type="password" formControlName="contrasena" placeholder="Contraseña">
+  <div *ngIf="loginForm.get('contrasena')?.touched && loginForm.get('contrasena')?.invalid">
+    <small *ngIf="loginForm.get('contrasena')?.errors?.['required']">Contraseña obligatoria</small>
+    <small *ngIf="loginForm.get('contrasena')?.errors?.['minlength']">Mínimo 6 caracteres</small>
+  </div>
+
+  <button type="submit">Ingresar</button>
+  <button type="button" (click)="loginForm.reset()">Limpiar</button>
+
+</form>

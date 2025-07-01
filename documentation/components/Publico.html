@@ -1,0 +1,376 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>strongfit-plus documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">strongfit-plus documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Publico</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/layouts/publico/publico.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-publico</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./publico.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-publico&#x27;,
+  imports: [RouterModule],
+  templateUrl: &#x27;./publico.html&#x27;,
+  
+})
+export class Publico {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;header class&#x3D;&quot;header d-flex align-items-center sticky-top&quot;&gt;
+  &lt;div class&#x3D;&quot;container-fluid container-xl d-flex justify-content-between align-items-center&quot;&gt;
+    &lt;a routerLink&#x3D;&quot;/&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;
+      &lt;img src&#x3D;&quot;src/assets/img/logo.png&quot; alt&#x3D;&quot;StrongFit Logo&quot; style&#x3D;&quot;height: 50px;&quot;&gt;
+      &lt;h1 class&#x3D;&quot;sitename ms-2 mb-0&quot;&gt;StrongFit&lt;/h1&gt;
+    &lt;/a&gt;
+    &lt;nav class&#x3D;&quot;navmenu&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/servicios&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/planes&quot;&gt;Planes&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/home&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class&#x3D;&quot;d-flex align-items-center gap-3&quot;&gt;
+      &lt;a class&#x3D;&quot;btn-getstarted&quot; routerLink&#x3D;&quot;/registro&quot;&gt;Inscríbete&lt;/a&gt;
+      &lt;a class&#x3D;&quot;bi bi-person-fill fs-4&quot; routerLink&#x3D;&quot;/login&quot; title&#x3D;&quot;Mi cuenta&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+
+&lt;footer class&#x3D;&quot;footer dark-background&quot;&gt;
+  &lt;div class&#x3D;&quot;container footer-top&quot;&gt;
+    &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+      &lt;div class&#x3D;&quot;col-lg-5 col-md-12 footer-about&quot;&gt;
+        &lt;a routerLink&#x3D;&quot;/home&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;&lt;span class&#x3D;&quot;sitename&quot;&gt;StrongFit&lt;/span&gt;&lt;/a&gt;
+        &lt;p&gt;Síguenos en redes sociales y forma parte de nuestra comunidad fitness.&lt;/p&gt;
+        &lt;div class&#x3D;&quot;social-links d-flex mt-4&quot;&gt;
+          &lt;a href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;bi bi-twitter-x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;bi bi-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;bi bi-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-lg-2 col-6 footer-links&quot;&gt;
+        &lt;h4&gt;Link&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/home&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/servicios&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/planes&quot;&gt;Planes&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-lg-3 col-md-12 footer-contact&quot;&gt;
+        &lt;h4&gt;Contacto&lt;/h4&gt;
+        &lt;p class&#x3D;&quot;mt-4&quot;&gt;&lt;strong&gt;Teléfono:&lt;/strong&gt; +569 XXXX XXXX&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; ejemplo&amp;#64;gmail.com&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><header class="header d-flex align-items-center sticky-top">  <div class="container-fluid container-xl d-flex justify-content-between align-items-center">    <a routerLink="/" class="logo d-flex align-items-center">      <img src="src/assets/img/logo.png" alt="StrongFit Logo" style="height: 50px;">      <h1 class="sitename ms-2 mb-0">StrongFit</h1>    </a>    <nav class="navmenu">      <ul>        <li><a routerLink="/">Inicio</a></li>        <li><a routerLink="/servicios">Servicios</a></li>        <li><a routerLink="/planes">Planes</a></li>        <li><a routerLink="/home">Contacto</a></li>      </ul>    </nav>    <div class="d-flex align-items-center gap-3">      <a class="btn-getstarted" routerLink="/registro">Inscríbete</a>      <a class="bi bi-person-fill fs-4" routerLink="/login" title="Mi cuenta"></a>    </div>  </div></header><router-outlet></router-outlet><footer class="footer dark-background">  <div class="container footer-top">    <div class="row gy-4">      <div class="col-lg-5 col-md-12 footer-about">        <a routerLink="/home" class="logo d-flex align-items-center"><span class="sitename">StrongFit</span></a>        <p>Síguenos en redes sociales y forma parte de nuestra comunidad fitness.</p>        <div class="social-links d-flex mt-4">          <a href="#"><i class="bi bi-twitter-x"></i></a>          <a href="#"><i class="bi bi-facebook"></i></a>          <a href="#"><i class="bi bi-instagram"></i></a>        </div>      </div>      <div class="col-lg-2 col-6 footer-links">        <h4>Link</h4>        <ul>          <li><a routerLink="/home">Inicio</a></li>          <li><a routerLink="/servicios">Servicios</a></li>          <li><a routerLink="/planes">Planes</a></li>        </ul>      </div>      <div class="col-lg-3 col-md-12 footer-contact">        <h4>Contacto</h4>        <p class="mt-4"><strong>Teléfono:</strong> +569 XXXX XXXX</p>        <p><strong>Email:</strong> ejemplo&#64;gmail.com</p>      </div>    </div>  </div></footer></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Publico'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Publico.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

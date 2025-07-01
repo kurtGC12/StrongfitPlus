@@ -1,0 +1,42 @@
+
+
+<main class="container my-5">
+  <div class="text-center">
+    <h2>¡Bienvenido/a, {{ nombreUsuario }}! 💪</h2>
+    <p class="lead">Gracias por ser parte de la comunidad StrongFit.</p>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-4 text-center">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-person-circle fs-1 text-success"></i>
+          <h5 class="card-title mt-3">Mi Perfil</h5>
+          <p class="card-text">Actualiza tus datos personales y preferencias.</p>
+          <a routerLink="/perfil" class="btn btn-outline-success">Editar Perfil</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-card-checklist fs-1 text-primary"></i>
+          <h5 class="card-title mt-3">Contratar Plan</h5>
+          <p class="card-text">Elige el plan ideal para ti y comienza tu progreso.</p>
+          <a routerLink="/planes" class="btn btn-outline-primary">Ver Planes</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-basket fs-1 text-danger"></i>
+          <h5 class="card-title mt-3">Mi Carrito</h5>
+          <p class="card-text">Revisa y confirma tus contrataciones.</p>
+          <a routerLink="/carrito" class="btn btn-outline-danger">Ir al Carrito</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

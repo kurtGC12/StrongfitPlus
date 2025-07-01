@@ -1,0 +1,613 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>strongfit-plus documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">strongfit-plus documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/home.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">src/app/pages/home/home.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-home&#x27;,
+  imports: [CommonModule],
+  templateUrl: &#x27;./home.html&#x27;,
+  
+})
+export class HomeComponent implements OnInit {
+
+  /**
+   * @description Inicializa el componente Home. Carga el nombre del usuario para mostrarlo en la vista.
+   * @returns {void}
+   */
+  ngOnInit(): void {
+    const usuario &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarioActivo&#x27;) || &#x27;{}&#x27;);
+    const span &#x3D; document.getElementById(&#x27;nombreBienvenida&#x27;);
+    if (span &amp;&amp; usuario?.nombre) {
+      span.textContent &#x3D; usuario.nombre;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;main class&#x3D;&quot;main&quot;&gt;
+
+  &lt;!-- Hero Section --&gt;
+  &lt;section id&#x3D;&quot;hero&quot; class&#x3D;&quot;hero section dark-background&quot;&gt;
+    &lt;img src&#x3D;&quot;src/assets/img/gym.jpg&quot; alt&#x3D;&quot;gym&quot; data-aos&#x3D;&quot;fade-in&quot;&gt;
+
+    &lt;div class&#x3D;&quot;container text-center&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+      &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
+          &lt;h2&gt;Bienvenido a StrongFit&lt;/h2&gt;
+          &lt;p&gt;¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. &lt;/p&gt;
+          &lt;a routerLink&#x3D;&quot;/registro&quot; class&#x3D;&quot;btn-get-started&quot;&gt;Inscríbete&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Nosotros --&gt;
+  &lt;section id&#x3D;&quot;about&quot; class&#x3D;&quot;about section&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-5 d-flex align-items-stretch&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+          &lt;div class&#x3D;&quot;w-100 h-100&quot;&gt;
+            &lt;img src&#x3D;&quot;src/assets/img/ad.webp&quot; class&#x3D;&quot;img-fluid w-100 h-100 object-fit-cover&quot; alt&#x3D;&quot;&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-lg-7 content&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+          &lt;h3&gt;Quienes somos&lt;/h3&gt;
+          &lt;p&gt;
+            Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral...
+          &lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt;i class&#x3D;&quot;bi bi-clipboard-heart-fill&quot;&gt;&lt;/i&gt;
+              &lt;div&gt;
+                &lt;h5&gt;Entrenamiento personalizado&lt;/h5&gt;
+                &lt;p&gt;Diseñamos planes de entrenamiento adaptados a tus necesidades...&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;i class&#x3D;&quot;bi bi-lungs-fill&quot;&gt;&lt;/i&gt;
+              &lt;div&gt;
+                &lt;h5&gt;Salud y bienestar&lt;/h5&gt;
+                &lt;p&gt;Creemos que la salud va más allá del ejercicio...&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;i class&#x3D;&quot;bi bi-people-fill&quot;&gt;&lt;/i&gt;
+              &lt;div&gt;
+                &lt;h5&gt;Comunidad y compromiso&lt;/h5&gt;
+                &lt;p&gt;Más que un lugar para entrenar, somos una comunidad...&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Por qué elegirnos --&gt;
+  &lt;section id&#x3D;&quot;why-us&quot; class&#x3D;&quot;why-us section&quot;&gt;
+    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+      &lt;div&gt;&lt;span&gt;¿Por qué&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;elegirnos?&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+          &lt;div class&#x3D;&quot;card-item&quot;&gt;
+            &lt;span&gt;01&lt;/span&gt;
+            &lt;h4&gt;Equipo profesional&lt;/h4&gt;
+            &lt;p&gt;Entrenadores certificados con atención personalizada...&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+          &lt;div class&#x3D;&quot;card-item&quot;&gt;
+            &lt;span&gt;02&lt;/span&gt;
+            &lt;h4&gt;Resultados medibles&lt;/h4&gt;
+            &lt;p&gt;Diseñamos rutinas con metas reales y evaluaciones constantes...&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;300&quot;&gt;
+          &lt;div class&#x3D;&quot;card-item&quot;&gt;
+            &lt;span&gt;03&lt;/span&gt;
+            &lt;h4&gt;Ambiente seguro y motivador&lt;/h4&gt;
+            &lt;p&gt;Promovemos una cultura de respeto y superación...&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Estadísticas --&gt;
+  &lt;section id&#x3D;&quot;stats&quot; class&#x3D;&quot;stats section&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+      &lt;div class&#x3D;&quot;row gy-4 justify-content-center&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
+            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;12&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+            &lt;p&gt;Sedes&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
+            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;1546&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+            &lt;p&gt;Miembros activos&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
+            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;75&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+            &lt;p&gt;Entrenadores certificados&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
+            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;250&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+            &lt;p&gt;Clases mensuales&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Call to Action --&gt;
+  &lt;section id&#x3D;&quot;call-to-action&quot; class&#x3D;&quot;call-to-action section dark-background&quot;&gt;
+    &lt;img src&#x3D;&quot;src/assets/img/gyminterior.jpg&quot; alt&#x3D;&quot;&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;div class&#x3D;&quot;row justify-content-center&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+        &lt;div class&#x3D;&quot;col-xl-10&quot;&gt;
+          &lt;div class&#x3D;&quot;text-center&quot;&gt;
+            &lt;h3&gt;Mantente en Competencia&lt;/h3&gt;
+            &lt;p&gt;TU LUGAR PARA EL CAMBIO&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Galería --&gt;
+  &lt;section id&#x3D;&quot;gallery&quot; class&#x3D;&quot;section&quot;&gt;
+    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+      &lt;h2&gt;Galería&lt;/h2&gt;
+      &lt;div&gt;&lt;span&gt;Explora Nuestro&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Gimnasio&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;div class&#x3D;&quot;row g-4&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; *ngFor&#x3D;&quot;let i of [1,2,3,4,5,6]; let index &#x3D; index&quot;&gt;
+          &lt;img src&#x3D;&quot;&#x27;src/assets/img/gym.jpg&#x27;&quot; class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Preguntas Frecuentes --&gt;
+  &lt;section id&#x3D;&quot;faq&quot; class&#x3D;&quot;faq section&quot;&gt;
+    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+      &lt;h2&gt;Preguntas Frecuentes&lt;/h2&gt;
+      &lt;div&gt;&lt;span&gt;Resuelve tus dudas en nuestras&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Preguntas Frecuentes&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Aquí van los faq-item como en el HTML original --&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Contacto --&gt;
+  &lt;section id&#x3D;&quot;contact&quot; class&#x3D;&quot;contact section&quot;&gt;
+    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+      &lt;h2&gt;Contacto&lt;/h2&gt;
+      &lt;div&gt;&lt;span&gt;Contactate con&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Nosotros&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;container&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+      &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;div class&#x3D;&quot;info-item d-flex&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-telephone flex-shrink-0&quot;&gt;&lt;/i&gt;
+            &lt;div&gt;
+              &lt;h3&gt;Teléfono&lt;/h3&gt;
+              &lt;p&gt;+569 XXXX XXXX&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;info-item d-flex&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-envelope flex-shrink-0&quot;&gt;&lt;/i&gt;
+            &lt;div&gt;
+              &lt;h3&gt;Email&lt;/h3&gt;
+              &lt;p&gt;ejemplo&amp;#64;gmail.com&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
+          &lt;!-- formulario de contacto omitido o adaptado si se usa backend --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="main">  <!-- Hero Section -->  <section id="hero" class="hero section dark-background">    <img src="src/assets/img/gym.jpg" alt="gym" data-aos="fade-in">    <div class="container text-center" data-aos="fade-up" data-aos-delay="100">      <div class="row justify-content-center">        <div class="col-lg-8">          <h2>Bienvenido a StrongFit</h2>          <p>¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. </p>          <a routerLink="/registro" class="btn-get-started">Inscríbete</a>        </div>      </div>    </div>  </section>  <!-- Nosotros -->  <section id="about" class="about section">    <div class="container">      <div class="row gy-4">        <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">          <div class="w-100 h-100">            <img src="src/assets/img/ad.webp" class="img-fluid w-100 h-100 object-fit-cover" alt="">          </div>        </div>        <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">          <h3>Quienes somos</h3>          <p>            Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral...          </p>          <ul>            <li>              <i class="bi bi-clipboard-heart-fill"></i>              <div>                <h5>Entrenamiento personalizado</h5>                <p>Diseñamos planes de entrenamiento adaptados a tus necesidades...</p>              </div>            </li>            <li>              <i class="bi bi-lungs-fill"></i>              <div>                <h5>Salud y bienestar</h5>                <p>Creemos que la salud va más allá del ejercicio...</p>              </div>            </li>            <li>              <i class="bi bi-people-fill"></i>              <div>                <h5>Comunidad y compromiso</h5>                <p>Más que un lugar para entrenar, somos una comunidad...</p>              </div>            </li>          </ul>        </div>      </div>    </div>  </section>  <!-- Por qué elegirnos -->  <section id="why-us" class="why-us section">    <div class="container section-title" data-aos="fade-up">      <div><span>¿Por qué</span> <span class="description-title">elegirnos?</span></div>    </div>    <div class="container">      <div class="row gy-4">        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">          <div class="card-item">            <span>01</span>            <h4>Equipo profesional</h4>            <p>Entrenadores certificados con atención personalizada...</p>          </div>        </div>        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">          <div class="card-item">            <span>02</span>            <h4>Resultados medibles</h4>            <p>Diseñamos rutinas con metas reales y evaluaciones constantes...</p>          </div>        </div>        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">          <div class="card-item">            <span>03</span>            <h4>Ambiente seguro y motivador</h4>            <p>Promovemos una cultura de respeto y superación...</p>          </div>        </div>      </div>    </div>  </section>  <!-- Estadísticas -->  <section id="stats" class="stats section">    <div class="container" data-aos="fade-up" data-aos-delay="100">      <div class="row gy-4 justify-content-center">        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>            <p>Sedes</p>          </div>        </div>        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="1546" data-purecounter-duration="1" class="purecounter"></span>            <p>Miembros activos</p>          </div>        </div>        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1" class="purecounter"></span>            <p>Entrenadores certificados</p>          </div>        </div>        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>            <p>Clases mensuales</p>          </div>        </div>      </div>    </div>  </section>  <!-- Call to Action -->  <section id="call-to-action" class="call-to-action section dark-background">    <img src="src/assets/img/gyminterior.jpg" alt="">    <div class="container">      <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">        <div class="col-xl-10">          <div class="text-center">            <h3>Mantente en Competencia</h3>            <p>TU LUGAR PARA EL CAMBIO</p>          </div>        </div>      </div>    </div>  </section>  <!-- Galería -->  <section id="gallery" class="section">    <div class="container section-title" data-aos="fade-up">      <h2>Galería</h2>      <div><span>Explora Nuestro</span> <span class="description-title">Gimnasio</span></div>    </div>    <div class="container">      <div class="row g-4">        <div class="col-lg-4 col-md-6" *ngFor="let i of [1,2,3,4,5,6]; let index = index">          <img src="\'src/assets/img/gym.jpg\'" class="gallery-img" alt="Gimnasio">        </div>      </div>    </div>  </section>  <!-- Preguntas Frecuentes -->  <section id="faq" class="faq section">    <div class="container section-title" data-aos="fade-up">      <h2>Preguntas Frecuentes</h2>      <div><span>Resuelve tus dudas en nuestras</span> <span class="description-title">Preguntas Frecuentes</span></div>    </div>    <!-- Aquí van los faq-item como en el HTML original -->  </section>  <!-- Contacto -->  <section id="contact" class="contact section">    <div class="container section-title" data-aos="fade-up">      <h2>Contacto</h2>      <div><span>Contactate con</span> <span class="description-title">Nosotros</span></div>    </div>    <div class="container" data-aos="fade-up" data-aos-delay="100">      <div class="row gy-4">        <div class="col-lg-4">          <div class="info-item d-flex">            <i class="bi bi-telephone flex-shrink-0"></i>            <div>              <h3>Teléfono</h3>              <p>+569 XXXX XXXX</p>            </div>          </div>          <div class="info-item d-flex">            <i class="bi bi-envelope flex-shrink-0"></i>            <div>              <h3>Email</h3>              <p>ejemplo&#64;gmail.com</p>            </div>          </div>        </div>        <div class="col-lg-8">          <!-- formulario de contacto omitido o adaptado si se usa backend -->        </div>      </div>    </div>  </section></main></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
