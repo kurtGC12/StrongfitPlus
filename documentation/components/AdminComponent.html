@@ -106,6 +106,10 @@
                 role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
         <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -120,13 +124,6 @@
 </p>
 
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Permite visualizar y gestionar funciones administrativas del sistema.</p>
-
-    </p>
 
 
     <p class="comment">
@@ -158,18 +155,19 @@
                 <td class="col-md-9"><code>app-admin</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">standalone</td>
-                <td class="col-md-9"><code>true</code></td>
-            </tr>
 
             <tr>
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
                             <code>CommonModule</code>
+                            <code>FormsModule</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./admin.css</code></td>
+            </tr>
 
 
 
@@ -202,6 +200,18 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#indexEditando" >indexEditando</a>
+                            </li>
+                            <li>
+                                <a href="#indexParaEliminar" >indexParaEliminar</a>
+                            </li>
+                            <li>
+                                <a href="#usuarioActivo" >usuarioActivo</a>
+                            </li>
+                            <li>
+                                <a href="#usuarioEditando" >usuarioEditando</a>
+                            </li>
+                            <li>
                                 <a href="#usuarios" >usuarios</a>
                             </li>
                         </ul>
@@ -217,7 +227,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#eliminar" >eliminar</a>
+                                <a href="#abrirEditar" >abrirEditar</a>
+                            </li>
+                            <li>
+                                <a href="#abrirEliminar" >abrirEliminar</a>
+                            </li>
+                            <li>
+                                <a href="#cargarUsuarios" >cargarUsuarios</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarSesion" >cerrarSesion</a>
+                            </li>
+                            <li>
+                                <a href="#confirmarEliminar" >confirmarEliminar</a>
+                            </li>
+                            <li>
+                                <a href="#guardarEdicion" >guardarEdicion</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -234,6 +259,54 @@
     </table>
 </section>
 
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/admin/admin.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -248,24 +321,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="eliminar"></a>
+                    <a name="abrirEditar"></a>
                     <span class="name">
-                        <span ><b>eliminar</b></span>
-                        <a href="#eliminar"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>abrirEditar</b></span>
+                        <a href="#abrirEditar"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>eliminar(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>abrirEditar(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/pages/admin/admin.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:53</a></div>
                         </td>
                     </tr>
 
@@ -286,7 +359,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>id</td>
+                                                <td>index</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                             </td>
@@ -307,6 +380,221 @@
                             <div class="io-description">
                                 
                             </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abrirEliminar"></a>
+                    <span class="name">
+                        <span ><b>abrirEliminar</b></span>
+                        <a href="#abrirEliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>abrirEliminar(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarUsuarios"></a>
+                    <span class="name">
+                        <span ><b>cargarUsuarios</b></span>
+                        <a href="#cargarUsuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarUsuarios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarSesion"></a>
+                    <span class="name">
+                        <span ><b>cerrarSesion</b></span>
+                        <a href="#cerrarSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarSesion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmarEliminar"></a>
+                    <span class="name">
+                        <span ><b>confirmarEliminar</b></span>
+                        <a href="#confirmarEliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmarEliminar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardarEdicion"></a>
+                    <span class="name">
+                        <span ><b>guardarEdicion</b></span>
+                        <a href="#guardarEdicion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>guardarEdicion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -358,6 +646,130 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="indexEditando"></a>
+                    <span class="name">
+                        <span ><b>indexEditando</b></span>
+                        <a href="#indexEditando"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/admin/admin.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="indexParaEliminar"></a>
+                    <span class="name">
+                        <span ><b>indexParaEliminar</b></span>
+                        <a href="#indexParaEliminar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/admin/admin.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioActivo"></a>
+                    <span class="name">
+                        <span ><b>usuarioActivo</b></span>
+                        <a href="#usuarioActivo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/admin/admin.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarioEditando"></a>
+                    <span class="name">
+                        <span ><b>usuarioEditando</b></span>
+                        <a href="#usuarioEditando"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/admin/admin.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="usuarios"></a>
                     <span class="name">
                         <span ><b>usuarios</b></span>
@@ -367,35 +779,18 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>[]</code>
+                        <i>Type : </i>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario[]</a></code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>[
-    {
-      id: 1,
-      nombre: &#x27;Cristóbal Valenzuela&#x27;,
-      usuario: &#x27;cvalenzuela&#x27;,
-      correo: &#x27;cristobal@example.com&#x27;,
-      fechaNacimiento: &#x27;1990-01-01&#x27;,
-      rol: &#x27;cliente&#x27;
-    },
-    {
-      id: 2,
-      nombre: &#x27;Administrador&#x27;,
-      usuario: &#x27;admin&#x27;,
-      correo: &#x27;admin@strongfit.cl&#x27;,
-      fechaNacimiento: &#x27;1992-05-21&#x27;,
-      rol: &#x27;admin&#x27;
-    }
-  ]</code>
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/admin/admin.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/admin/admin.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -410,53 +805,106 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
 
 /**
  * @description Componente para la vista de administrador.
  * Permite visualizar y gestionar funciones administrativas del sistema.
  */
+
+interface Usuario {
+  nombre: string;
+  usuario: string;
+  email: string;
+  fechaNacimiento: string;
+  rol: string;
+  logueado?: boolean;
+}
+
 @Component({
   selector: &#x27;app-admin&#x27;,
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: &#x27;./admin.html&#x27;,
-  
+  styleUrls: [&#x27;./admin.css&#x27;],
+    imports: [CommonModule, FormsModule]
 })
 export class AdminComponent implements OnInit {
-  usuarios &#x3D; [
-    {
-      id: 1,
-      nombre: &#x27;Cristóbal Valenzuela&#x27;,
-      usuario: &#x27;cvalenzuela&#x27;,
-      correo: &#x27;cristobal@example.com&#x27;,
-      fechaNacimiento: &#x27;1990-01-01&#x27;,
-      rol: &#x27;cliente&#x27;
-    },
-    {
-      id: 2,
-      nombre: &#x27;Administrador&#x27;,
-      usuario: &#x27;admin&#x27;,
-      correo: &#x27;admin@strongfit.cl&#x27;,
-      fechaNacimiento: &#x27;1992-05-21&#x27;,
-      rol: &#x27;admin&#x27;
-    }
-  ];
+  usuarios: Usuario[] &#x3D; [];
+  usuarioActivo: Usuario | null &#x3D; null;
+  usuarioEditando: Usuario | null &#x3D; null;
+  indexEditando: number | null &#x3D; null;
+  indexParaEliminar: number | null &#x3D; null;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+    this.usuarioActivo &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarioActivo&#x27;) || &#x27;null&#x27;);
 
+    if (!this.usuarioActivo || this.usuarioActivo.rol !&#x3D;&#x3D; &#x27;admin&#x27;) {
+      alert(&#x27;Acceso denegado. Solo administradores pueden ingresar.&#x27;);
+      this.router.navigate([&#x27;/login&#x27;]);
+      return;
+    }
+
+    this.cargarUsuarios();
   }
 
-  eliminar(id: number) {
-    this.usuarios &#x3D; this.usuarios.filter(usuario &#x3D;&gt; usuario.id !&#x3D;&#x3D; id);
+  cargarUsuarios() {
+    this.usuarios &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarios&#x27;) || &#x27;[]&#x27;);
   }
-}
-</code></pre>
+
+  abrirEditar(index: number) {
+    this.indexEditando &#x3D; index;
+    this.usuarioEditando &#x3D; { ...this.usuarios[index] };
+  }
+
+  guardarEdicion() {
+    if (this.indexEditando !&#x3D;&#x3D; null &amp;&amp; this.usuarioEditando) {
+      this.usuarios[this.indexEditando] &#x3D; this.usuarioEditando;
+      localStorage.setItem(&#x27;usuarios&#x27;, JSON.stringify(this.usuarios));
+
+      if (this.usuarioEditando.email &#x3D;&#x3D;&#x3D; this.usuarioActivo?.email) {
+        localStorage.setItem(&#x27;usuarioActivo&#x27;, JSON.stringify(this.usuarioEditando));
+      }
+
+      this.usuarioEditando &#x3D; null;
+      this.indexEditando &#x3D; null;
+      alert(&#x27;Usuario actualizado correctamente.&#x27;);
+    }
+  }
+
+  abrirEliminar(index: number) {
+    this.indexParaEliminar &#x3D; index;
+  }
+
+  confirmarEliminar() {
+    if (this.indexParaEliminar !&#x3D;&#x3D; null) {
+      const eliminado &#x3D; this.usuarios.splice(this.indexParaEliminar, 1)[0];
+      localStorage.setItem(&#x27;usuarios&#x27;, JSON.stringify(this.usuarios));
+
+      if (eliminado.email &#x3D;&#x3D;&#x3D; this.usuarioActivo?.email) {
+        alert(&#x27;Tu cuenta ha sido eliminada.&#x27;);
+        localStorage.removeItem(&#x27;usuarioActivo&#x27;);
+        this.router.navigate([&#x27;/login&#x27;]);
+        return;
+      }
+
+      this.indexParaEliminar &#x3D; null;
+    }
+  }
+
+  cerrarSesion() {
+    localStorage.removeItem(&#x27;usuarioActivo&#x27;);
+    this.router.navigate([&#x27;/login&#x27;]);
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;container my-5&quot;&gt;
+  &lt;h2&gt;Gestión de Usuarios&lt;/h2&gt;
   &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
-    &lt;table class&#x3D;&quot;table table-striped&quot; id&#x3D;&quot;tabla-usuarios&quot;&gt;
+    &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
       &lt;thead class&#x3D;&quot;table-dark&quot;&gt;
         &lt;tr&gt;
           &lt;th&gt;Nombre&lt;/th&gt;
@@ -468,26 +916,65 @@ export class AdminComponent implements OnInit {
         &lt;/tr&gt;
       &lt;/thead&gt;
       &lt;tbody&gt;
-        &lt;!-- Aquí se llenará dinámicamente con Angular --&gt;
-        &lt;tr *ngFor&#x3D;&quot;let usuario of usuarios&quot;&gt;
-          &lt;td&gt;{{ usuario.nombre }}&lt;/td&gt;
-          &lt;td&gt;{{ usuario.usuario }}&lt;/td&gt;
-          &lt;td&gt;{{ usuario.correo }}&lt;/td&gt;
-          &lt;td&gt;{{ usuario.fechaNacimiento }}&lt;/td&gt;
-          &lt;td&gt;{{ usuario.rol }}&lt;/td&gt;
+        &lt;tr *ngFor&#x3D;&quot;let user of usuarios; let i &#x3D; index&quot;&gt;
+          &lt;td&gt;{{ user.nombre }}&lt;/td&gt;
+          &lt;td&gt;{{ user.usuario }}&lt;/td&gt;
+          &lt;td&gt;{{ user.email }}&lt;/td&gt;
+          &lt;td&gt;{{ user.fechaNacimiento }}&lt;/td&gt;
+          &lt;td&gt;{{ user.rol }}&lt;/td&gt;
           &lt;td&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;eliminar(usuario.id)&quot;&gt;
-              &lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;
-            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-warning me-2&quot; (click)&#x3D;&quot;abrirEditar(i)&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalEditar&quot;&gt;Editar&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;abrirEliminar(i)&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalEliminar&quot;&gt;Eliminar&lt;/button&gt;
           &lt;/td&gt;
         &lt;/tr&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
 &lt;/main&gt;
-</code></pre>
+
+&lt;!-- Modal Editar --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalEditar&quot; tabindex&#x3D;&quot;-1&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content&quot; *ngIf&#x3D;&quot;usuarioEditando&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-header&quot;&gt;&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Editar Usuario&lt;/h5&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control mb-2&quot; [(ngModel)]&#x3D;&quot;usuarioEditando.nombre&quot; placeholder&#x3D;&quot;Nombre&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control mb-2&quot; [(ngModel)]&#x3D;&quot;usuarioEditando.usuario&quot; placeholder&#x3D;&quot;Usuario&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control mb-2&quot; [(ngModel)]&#x3D;&quot;usuarioEditando.fechaNacimiento&quot; type&#x3D;&quot;date&quot;&gt;
+        &lt;select class&#x3D;&quot;form-control mb-2&quot; [(ngModel)]&#x3D;&quot;usuarioEditando.rol&quot;&gt;
+          &lt;option value&#x3D;&quot;admin&quot;&gt;Administrador&lt;/option&gt;
+          &lt;option value&#x3D;&quot;cliente&quot;&gt;Cliente&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-secondary&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Cancelar&lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;guardarEdicion()&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Guardar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Eliminar --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalEliminar&quot; tabindex&#x3D;&quot;-1&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-header&quot;&gt;&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Confirmar eliminación&lt;/h5&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;¿Estás seguro de eliminar este usuario?&lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-secondary&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Cancelar&lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;confirmarEliminar()&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;Eliminar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./admin.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
@@ -514,8 +1001,8 @@ export class AdminComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><main class="container my-5">  <div class="table-responsive">    <table class="table table-striped" id="tabla-usuarios">      <thead class="table-dark">        <tr>          <th>Nombre</th>          <th>Usuario</th>          <th>Correo</th>          <th>Fecha Nac.</th>          <th>Rol</th>          <th>Acciones</th>        </tr>      </thead>      <tbody>        <!-- Aquí se llenará dinámicamente con Angular -->        <tr *ngFor="let usuario of usuarios">          <td>{{ usuario.nombre }}</td>          <td>{{ usuario.usuario }}</td>          <td>{{ usuario.correo }}</td>          <td>{{ usuario.fechaNacimiento }}</td>          <td>{{ usuario.rol }}</td>          <td>            <button class="btn btn-sm btn-danger" (click)="eliminar(usuario.id)">              <i class="bi bi-trash"></i>            </button>          </td>        </tr>      </tbody>    </table>  </div></main></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+        var COMPONENT_TEMPLATE = '<div><main class="container my-5">  <h2>Gestión de Usuarios</h2>  <div class="table-responsive">    <table class="table table-striped">      <thead class="table-dark">        <tr>          <th>Nombre</th>          <th>Usuario</th>          <th>Correo</th>          <th>Fecha Nac.</th>          <th>Rol</th>          <th>Acciones</th>        </tr>      </thead>      <tbody>        <tr *ngFor="let user of usuarios; let i = index">          <td>{{ user.nombre }}</td>          <td>{{ user.usuario }}</td>          <td>{{ user.email }}</td>          <td>{{ user.fechaNacimiento }}</td>          <td>{{ user.rol }}</td>          <td>            <button class="btn btn-sm btn-warning me-2" (click)="abrirEditar(i)" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>            <button class="btn btn-sm btn-danger" (click)="abrirEliminar(i)" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>          </td>        </tr>      </tbody>    </table>  </div></main><!-- Modal Editar --><div class="modal fade" id="modalEditar" tabindex="-1">  <div class="modal-dialog">    <div class="modal-content" *ngIf="usuarioEditando">      <div class="modal-header"><h5 class="modal-title">Editar Usuario</h5></div>      <div class="modal-body">        <input class="form-control mb-2" [(ngModel)]="usuarioEditando.nombre" placeholder="Nombre">        <input class="form-control mb-2" [(ngModel)]="usuarioEditando.usuario" placeholder="Usuario">        <input class="form-control mb-2" [(ngModel)]="usuarioEditando.fechaNacimiento" type="date">        <select class="form-control mb-2" [(ngModel)]="usuarioEditando.rol">          <option value="admin">Administrador</option>          <option value="cliente">Cliente</option>        </select>      </div>      <div class="modal-footer">        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>        <button class="btn btn-success" (click)="guardarEdicion()" data-bs-dismiss="modal">Guardar</button>      </div>    </div>  </div></div><!-- Modal Eliminar --><div class="modal fade" id="modalEliminar" tabindex="-1">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header"><h5 class="modal-title">Confirmar eliminación</h5></div>      <div class="modal-body">¿Estás seguro de eliminar este usuario?</div>      <div class="modal-footer">        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>        <button class="btn btn-danger" (click)="confirmarEliminar()" data-bs-dismiss="modal">Eliminar</button>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminComponent'};
 </script>

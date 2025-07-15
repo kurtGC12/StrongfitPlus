@@ -84,6 +84,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/Cliente.html" data-type="entity-link" >Cliente</a>
                             </li>
                             <li class="link">
+                                <a href="components/ClienteFormComponent.html" data-type="entity-link" >ClienteFormComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/HomeComponent.html" data-type="entity-link" >HomeComponent</a>
                             </li>
                             <li class="link">
@@ -121,7 +124,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
-                                    <a href="injectables/Servicios.html" data-type="entity-link" >Servicios</a>
+                                    <a href="injectables/ClienteService.html" data-type="entity-link" >ClienteService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/Servicio.html" data-type="entity-link" >Servicio</a>
                                 </li>
                             </ul>
                         </li>
@@ -134,7 +140,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/ClientesGym.html" data-type="entity-link" >ClientesGym</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Producto.html" data-type="entity-link" >Producto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Usuario.html" data-type="entity-link" >Usuario</a>
                             </li>
                         </ul>
                     </li>

@@ -192,6 +192,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                         </ul>
@@ -220,6 +223,46 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/pages/home/home.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -236,8 +279,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/app/pages/home/home.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/app/pages/home/home.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -264,6 +307,7 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
+import AOS from &#x27;aos&#x27;;
 
 @Component({
   selector: &#x27;app-home&#x27;,
@@ -284,211 +328,362 @@ export class HomeComponent implements OnInit {
       span.textContent &#x3D; usuario.nombre;
     }
   }
+
+   /**
+   * @description Inicializa la animaciones de AOS (Animate On Scroll).
+   * @returns {void}
+
+   */
+  ngAfterViewInit(): void {
+      AOS.init(); // Inicializa animaciones
+    }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;main class&#x3D;&quot;main&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;main&quot;&gt;
 
-  &lt;!-- Hero Section --&gt;
-  &lt;section id&#x3D;&quot;hero&quot; class&#x3D;&quot;hero section dark-background&quot;&gt;
-    &lt;img src&#x3D;&quot;src/assets/img/gym.jpg&quot; alt&#x3D;&quot;gym&quot; data-aos&#x3D;&quot;fade-in&quot;&gt;
+    &lt;!-- Inicio --&gt;
+    &lt;section id&#x3D;&quot;hero&quot; class&#x3D;&quot;hero section dark-background&quot;&gt;
 
-    &lt;div class&#x3D;&quot;container text-center&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
-      &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
-        &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
-          &lt;h2&gt;Bienvenido a StrongFit&lt;/h2&gt;
-          &lt;p&gt;¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. &lt;/p&gt;
-          &lt;a routerLink&#x3D;&quot;/registro&quot; class&#x3D;&quot;btn-get-started&quot;&gt;Inscríbete&lt;/a&gt;
+      &lt;img src&#x3D;&quot;/img/gym.jpg&quot; alt&#x3D;&quot;gym&quot; data-aos&#x3D;&quot;fade-in&quot;&gt;
+
+      &lt;div class&#x3D;&quot;container text-center&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+        &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+          &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
+            &lt;h2&gt;Bienvenido a StrongFit&lt;/h2&gt;
+            &lt;p&gt;¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. &lt;/p&gt;
+            &lt;a routerLink&#x3D;&quot;/registro&quot; class&#x3D;&quot;btn-get-started&quot;&gt;Inscríbete&lt;/a&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+      
+    &lt;/section&gt;
 
-  &lt;!-- Nosotros --&gt;
-  &lt;section id&#x3D;&quot;about&quot; class&#x3D;&quot;about section&quot;&gt;
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-      &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+    &lt;!-- Quines somos seccion--&gt;
+    &lt;section id&#x3D;&quot;about&quot; class&#x3D;&quot;about section&quot;&gt;
+
+      &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+
         &lt;div class&#x3D;&quot;col-lg-5 d-flex align-items-stretch&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
-          &lt;div class&#x3D;&quot;w-100 h-100&quot;&gt;
-            &lt;img src&#x3D;&quot;src/assets/img/ad.webp&quot; class&#x3D;&quot;img-fluid w-100 h-100 object-fit-cover&quot; alt&#x3D;&quot;&quot;&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;col-lg-7 content&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
-          &lt;h3&gt;Quienes somos&lt;/h3&gt;
-          &lt;p&gt;
-            Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral...
-          &lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;
-              &lt;i class&#x3D;&quot;bi bi-clipboard-heart-fill&quot;&gt;&lt;/i&gt;
-              &lt;div&gt;
-                &lt;h5&gt;Entrenamiento personalizado&lt;/h5&gt;
-                &lt;p&gt;Diseñamos planes de entrenamiento adaptados a tus necesidades...&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;i class&#x3D;&quot;bi bi-lungs-fill&quot;&gt;&lt;/i&gt;
-              &lt;div&gt;
-                &lt;h5&gt;Salud y bienestar&lt;/h5&gt;
-                &lt;p&gt;Creemos que la salud va más allá del ejercicio...&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;i class&#x3D;&quot;bi bi-people-fill&quot;&gt;&lt;/i&gt;
-              &lt;div&gt;
-                &lt;h5&gt;Comunidad y compromiso&lt;/h5&gt;
-                &lt;p&gt;Más que un lugar para entrenar, somos una comunidad...&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
+        &lt;div class&#x3D;&quot;w-100 h-100&quot;&gt;
+          &lt;img src&#x3D;&quot;/img/ad.webp&quot; class&#x3D;&quot;img-fluid w-100 h-100 object-fit-cover&quot; alt&#x3D;&quot;&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
 
-  &lt;!-- Por qué elegirnos --&gt;
-  &lt;section id&#x3D;&quot;why-us&quot; class&#x3D;&quot;why-us section&quot;&gt;
-    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
-      &lt;div&gt;&lt;span&gt;¿Por qué&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;elegirnos?&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-      &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
-        &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
-          &lt;div class&#x3D;&quot;card-item&quot;&gt;
-            &lt;span&gt;01&lt;/span&gt;
-            &lt;h4&gt;Equipo profesional&lt;/h4&gt;
-            &lt;p&gt;Entrenadores certificados con atención personalizada...&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
-          &lt;div class&#x3D;&quot;card-item&quot;&gt;
-            &lt;span&gt;02&lt;/span&gt;
-            &lt;h4&gt;Resultados medibles&lt;/h4&gt;
-            &lt;p&gt;Diseñamos rutinas con metas reales y evaluaciones constantes...&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;300&quot;&gt;
-          &lt;div class&#x3D;&quot;card-item&quot;&gt;
-            &lt;span&gt;03&lt;/span&gt;
-            &lt;h4&gt;Ambiente seguro y motivador&lt;/h4&gt;
-            &lt;p&gt;Promovemos una cultura de respeto y superación...&lt;/p&gt;
+          &lt;div class&#x3D;&quot;col-lg-7 content&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+            &lt;h3&gt;Quienes somos&lt;/h3&gt;
+            &lt;p&gt;
+              Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral. Ofrecemos un espacio profesional, seguro y motivador, donde cada persona encuentra las herramientas necesarias para alcanzar sus objetivos. Nuestro compromiso es acompañarte con experiencia, dedicación y resultados reales.
+            &lt;/p&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;i class&#x3D;&quot;bi bi-clipboard-heart-fill&quot;&gt;&lt;/i&gt;
+                &lt;div&gt;
+                  &lt;h5&gt;Entrenamiento personalizados&lt;/h5&gt;
+                  &lt;p&gt;Diseñamos planes de entrenamiento adaptados a tus necesidades, nivel y metas. Contamos con entrenadores calificados que te guían en cada etapa de tu progreso.&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;i class&#x3D;&quot;bi bi-lungs-fill&quot;&gt;&lt;/i&gt;
+                &lt;div&gt;
+                  &lt;h5&gt;Salud y bienestar&lt;/h5&gt;
+                  &lt;p&gt;Creemos que la salud va más allá del ejercicio. Promovemos un enfoque integral que incluye nutrición, recuperación y hábitos saludables para un estilo de vida completo.&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;i class&#x3D;&quot;bi bi-people-fill&quot;&gt;&lt;/i&gt;
+                &lt;div&gt;
+                  &lt;h5&gt;Comunidad y compromiso&lt;/h5&gt;
+                  &lt;p&gt;Más que un lugar para entrenar, somos una comunidad. Aquí encontrarás un ambiente de respeto, motivación y compañerismo que impulsa tu evolución constante.&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+    &lt;/section&gt;
 
-  &lt;!-- Estadísticas --&gt;
-  &lt;section id&#x3D;&quot;stats&quot; class&#x3D;&quot;stats section&quot;&gt;
-    &lt;div class&#x3D;&quot;container&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
-      &lt;div class&#x3D;&quot;row gy-4 justify-content-center&quot;&gt;
-        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
-            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;12&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
-            &lt;p&gt;Sedes&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
-            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;1546&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
-            &lt;p&gt;Miembros activos&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
-            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;75&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
-            &lt;p&gt;Entrenadores certificados&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;stats-item text-center&quot;&gt;
-            &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;250&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
-            &lt;p&gt;Clases mensuales&lt;/p&gt;
-          &lt;/div&gt;
+   &lt;section id&#x3D;&quot;why-us&quot; class&#x3D;&quot;why-us section&quot;&gt;
+
+  &lt;!-- porque --&gt;
+  &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+    &lt;div&gt;&lt;span&gt;¿Por qué&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;elegirnos?&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+        &lt;div class&#x3D;&quot;card-item&quot;&gt;
+          &lt;span&gt;01&lt;/span&gt;
+          &lt;h4&gt;&lt;a class&#x3D;&quot;stretched-link&quot;&gt;Equipo profesional&lt;/a&gt;&lt;/h4&gt;
+          &lt;p&gt;Contamos con entrenadores certificados con amplia experiencia en distintas disciplinas. Te guiamos con atención personalizada y enfoque técnico para que entrenes de forma segura y eficiente, sin importar tu nivel.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
 
-  &lt;!-- Call to Action --&gt;
-  &lt;section id&#x3D;&quot;call-to-action&quot; class&#x3D;&quot;call-to-action section dark-background&quot;&gt;
-    &lt;img src&#x3D;&quot;src/assets/img/gyminterior.jpg&quot; alt&#x3D;&quot;&quot;&gt;
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-      &lt;div class&#x3D;&quot;row justify-content-center&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
-        &lt;div class&#x3D;&quot;col-xl-10&quot;&gt;
-          &lt;div class&#x3D;&quot;text-center&quot;&gt;
-            &lt;h3&gt;Mantente en Competencia&lt;/h3&gt;
-            &lt;p&gt;TU LUGAR PARA EL CAMBIO&lt;/p&gt;
-          &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+        &lt;div class&#x3D;&quot;card-item&quot;&gt;
+          &lt;span&gt;02&lt;/span&gt;
+          &lt;h4&gt;&lt;a class&#x3D;&quot;stretched-link&quot;&gt;Resultados medibles&lt;/a&gt;&lt;/h4&gt;
+          &lt;p&gt;Nuestros programas están diseñados para ofrecer resultados visibles y sostenibles. Evaluamos tu progreso constantemente, adaptando rutinas y objetivos para que avances de forma real y motivadora desde el primer mes.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;&lt;!-- Card  --&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;300&quot;&gt;
+        &lt;div class&#x3D;&quot;card-item&quot;&gt;
+          &lt;span&gt;03&lt;/span&gt;
+          &lt;h4&gt;&lt;a class&#x3D;&quot;stretched-link&quot;&gt;Ambiente seguro y motivador&lt;/a&gt;&lt;/h4&gt;
+          &lt;p&gt;Entrenar en un entorno cómodo, limpio y bien equipado marca la diferencia. Promovemos una cultura de respeto y motivación donde cada persona se siente bienvenida, acompañada y lista para superarse día a día.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;&lt;!-- Card  --&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/section&gt;&lt;!--  Section --&gt;
+
+ 
+&lt;section id&#x3D;&quot;stats&quot; class&#x3D;&quot;stats section&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+    &lt;!-- Agrega &#x27;justify-content-center&#x27; para centrar horizontalmente --&gt;
+    &lt;div class&#x3D;&quot;row gy-4 justify-content-center&quot;&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+        &lt;div class&#x3D;&quot;stats-item text-center w-100 h-100&quot;&gt;
+          &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;12&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+          &lt;p&gt;Sedes&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
 
-  &lt;!-- Galería --&gt;
-  &lt;section id&#x3D;&quot;gallery&quot; class&#x3D;&quot;section&quot;&gt;
-    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
-      &lt;h2&gt;Galería&lt;/h2&gt;
-      &lt;div&gt;&lt;span&gt;Explora Nuestro&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Gimnasio&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-      &lt;div class&#x3D;&quot;row g-4&quot;&gt;
-        &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; *ngFor&#x3D;&quot;let i of [1,2,3,4,5,6]; let index &#x3D; index&quot;&gt;
-          &lt;img src&#x3D;&quot;&#x27;src/assets/img/gym.jpg&#x27;&quot; class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio&quot;&gt;
+      &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+        &lt;div class&#x3D;&quot;stats-item text-center w-100 h-100&quot;&gt;
+          &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;1546&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+          &lt;p&gt;Miembros activos&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
 
-  &lt;!-- Preguntas Frecuentes --&gt;
-  &lt;section id&#x3D;&quot;faq&quot; class&#x3D;&quot;faq section&quot;&gt;
-    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
-      &lt;h2&gt;Preguntas Frecuentes&lt;/h2&gt;
-      &lt;div&gt;&lt;span&gt;Resuelve tus dudas en nuestras&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Preguntas Frecuentes&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- Aquí van los faq-item como en el HTML original --&gt;
-  &lt;/section&gt;
+      &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+        &lt;div class&#x3D;&quot;stats-item text-center w-100 h-100&quot;&gt;
+          &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;75&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+          &lt;p&gt;Entrenadores certificados&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
 
-  &lt;!-- Contacto --&gt;
-  &lt;section id&#x3D;&quot;contact&quot; class&#x3D;&quot;contact section&quot;&gt;
-    &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
-      &lt;h2&gt;Contacto&lt;/h2&gt;
-      &lt;div&gt;&lt;span&gt;Contactate con&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Nosotros&lt;/span&gt;&lt;/div&gt;
+       &lt;div class&#x3D;&quot;col-lg-3 col-md-6&quot;&gt;
+        &lt;div class&#x3D;&quot;stats-item text-center w-100 h-100&quot;&gt;
+          &lt;span data-purecounter-start&#x3D;&quot;0&quot; data-purecounter-end&#x3D;&quot;250&quot; data-purecounter-duration&#x3D;&quot;1&quot; class&#x3D;&quot;purecounter&quot;&gt;&lt;/span&gt;
+          &lt;p&gt;Clases mensuales&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;container&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
-      &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
-        &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
-          &lt;div class&#x3D;&quot;info-item d-flex&quot;&gt;
-            &lt;i class&#x3D;&quot;bi bi-telephone flex-shrink-0&quot;&gt;&lt;/i&gt;
-            &lt;div&gt;
-              &lt;h3&gt;Teléfono&lt;/h3&gt;
-              &lt;p&gt;+569 XXXX XXXX&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class&#x3D;&quot;info-item d-flex&quot;&gt;
-            &lt;i class&#x3D;&quot;bi bi-envelope flex-shrink-0&quot;&gt;&lt;/i&gt;
-            &lt;div&gt;
-              &lt;h3&gt;Email&lt;/h3&gt;
-              &lt;p&gt;ejemplo&amp;#64;gmail.com&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    
+    &lt;section id&#x3D;&quot;call-to-action&quot; class&#x3D;&quot;call-to-action section dark-background&quot;&gt;
+
+      &lt;img src&#x3D;&quot;/img/gyminterior.jpg&quot; alt&#x3D;&quot;&quot;&gt;
+
+      &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;row justify-content-center&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+          &lt;div class&#x3D;&quot;col-xl-10&quot;&gt;
+            &lt;div class&#x3D;&quot;text-center&quot;&gt;
+              &lt;h3&gt;Mantente en Competencia&lt;/h3&gt;
+              &lt;p&gt;TU LUGAR PARA EL CAMBIO&lt;/p&gt;
+              &lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
-          &lt;!-- formulario de contacto omitido o adaptado si se usa backend --&gt;
+      &lt;/div&gt;
+
+    &lt;/section&gt;
+
+  &lt;!-- Gallery  --&gt;
+&lt;section id&#x3D;&quot;gallery&quot; class&#x3D;&quot;section&quot;&gt;
+  &lt;!-- Section Title --&gt;
+  &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+    &lt;h2&gt;Galería&lt;/h2&gt;
+    &lt;div&gt;&lt;span&gt;Explora Nuestro&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Gimnasio&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row g-4&quot;&gt;
+
+      &lt;!-- Imagen 1 --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+        &lt;img src&#x3D;&quot;/img/gym1.jpg&quot;  class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio 1&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Imagen 2 --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;150&quot;&gt;
+        &lt;img src&#x3D;&quot;/img/gym2.jpg&quot;  class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio 2&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Imagen 3 --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+        &lt;img src&#x3D;&quot;/img/gym3.jpg&quot;  class&#x3D;&quot;gallery-img&quot;alt&#x3D;&quot;Gimnasio 3&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Imagen 4 --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;250&quot;&gt;
+        &lt;img src&#x3D;&quot;/img/gym4.jpg&quot;  class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio 4&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Imagen 5 --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;300&quot;&gt;
+        &lt;img src&#x3D;&quot;/img/gym5.jpg&quot;  class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio 5&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Imagen 6 --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4 col-md-6&quot; data-aos&#x3D;&quot;zoom-in&quot; data-aos-delay&#x3D;&quot;350&quot;&gt;
+        &lt;img src&#x3D;&quot;/img/gym6.jpg&quot;  class&#x3D;&quot;gallery-img&quot; alt&#x3D;&quot;Gimnasio 6&quot;&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+    &lt;!-- Faq Section --&gt;
+&lt;section id&#x3D;&quot;faq&quot; class&#x3D;&quot;faq section&quot;&gt;
+
+  &lt;!-- Section Title --&gt;
+  &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+    &lt;h2&gt;Preguntas Frecuentes&lt;/h2&gt;
+    &lt;div&gt;&lt;span&gt;Resuelve tus dudas en nuestras&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Preguntas Frecuentes&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;!-- End Section Title --&gt;
+
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+      &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
+        &lt;div class&#x3D;&quot;faq-container&quot;&gt;
+
+          &lt;div class&#x3D;&quot;faq-item faq-active&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+            &lt;i class&#x3D;&quot;faq-icon bi bi-question-circle&quot;&gt;&lt;/i&gt;
+            &lt;h3&gt;¿Cuál es el horario de funcionamiento del gimnasio?&lt;/h3&gt;
+            &lt;div class&#x3D;&quot;faq-content&quot;&gt;
+              &lt;p&gt;Estamos abiertos de lunes a viernes de 06:00 a 22:00 hrs, sábados de 08:00 a 20:00 hrs y domingos de 09:00 a 14:00 hrs.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;i class&#x3D;&quot;faq-toggle bi bi-chevron-right&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;&lt;!-- End Faq item--&gt;
+
+          &lt;div class&#x3D;&quot;faq-item&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;300&quot;&gt;
+            &lt;i class&#x3D;&quot;faq-icon bi bi-question-circle&quot;&gt;&lt;/i&gt;
+            &lt;h3&gt;¿Necesito experiencia previa para inscribirme?&lt;/h3&gt;
+            &lt;div class&#x3D;&quot;faq-content&quot;&gt;
+              &lt;p&gt;No. Nuestros planes están diseñados para todo tipo de personas, desde principiantes hasta avanzados. Contamos con entrenadores que te guiarán desde el primer día.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;i class&#x3D;&quot;faq-toggle bi bi-chevron-right&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;&lt;!-- End Faq item--&gt;
+
+          &lt;div class&#x3D;&quot;faq-item&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;400&quot;&gt;
+            &lt;i class&#x3D;&quot;faq-icon bi bi-question-circle&quot;&gt;&lt;/i&gt;
+            &lt;h3&gt;¿Qué incluye la inscripción?&lt;/h3&gt;
+            &lt;div class&#x3D;&quot;faq-content&quot;&gt;
+              &lt;p&gt;La inscripción incluye acceso completo a las máquinas, áreas de entrenamiento funcional, asesoría inicial y clases grupales según el plan que elijas.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;i class&#x3D;&quot;faq-toggle bi bi-chevron-right&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;&lt;!-- End Faq item--&gt;
+
+          &lt;div class&#x3D;&quot;faq-item&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;500&quot;&gt;
+            &lt;i class&#x3D;&quot;faq-icon bi bi-question-circle&quot;&gt;&lt;/i&gt;
+            &lt;h3&gt;¿Puedo congelar mi plan si no puedo asistir por un tiempo?&lt;/h3&gt;
+            &lt;div class&#x3D;&quot;faq-content&quot;&gt;
+              &lt;p&gt;Sí, puedes congelar tu plan hasta por 30 días en el año. Solo debes informarlo con anticipación en recepción o por WhatsApp.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;i class&#x3D;&quot;faq-toggle bi bi-chevron-right&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;&lt;!-- End Faq item--&gt;
+
+          &lt;div class&#x3D;&quot;faq-item&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;600&quot;&gt;
+            &lt;i class&#x3D;&quot;faq-icon bi bi-question-circle&quot;&gt;&lt;/i&gt;
+            &lt;h3&gt;¿Qué necesito llevar para entrenar?&lt;/h3&gt;
+            &lt;div class&#x3D;&quot;faq-content&quot;&gt;
+              &lt;p&gt;Solo necesitas ropa cómoda, toalla personal y botella de agua. El uso de toalla es obligatorio en las máquinas por higiene.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;i class&#x3D;&quot;faq-toggle bi bi-chevron-right&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;&lt;!-- End Faq item--&gt;
+
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/main&gt;
+  &lt;/div&gt;
 
-</code></pre>
+&lt;/section&gt;
+
+   &lt;!-- Sección de Contacto --&gt;
+&lt;section id&#x3D;&quot;contact&quot; class&#x3D;&quot;contact section&quot;&gt;
+
+  &lt;!-- Título de la Sección --&gt;
+  &lt;div class&#x3D;&quot;container section-title&quot; data-aos&#x3D;&quot;fade-up&quot;&gt;
+    &lt;h2&gt;Contacto&lt;/h2&gt;
+    &lt;div&gt;&lt;span&gt;Contactate con&lt;/span&gt; &lt;span class&#x3D;&quot;description-title&quot;&gt;Nosotros&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;!-- Fin Título de la Sección --&gt;
+
+  &lt;div class&#x3D;&quot;container&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;100&quot;&gt;
+
+    &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+
+        &lt;div class&#x3D;&quot;info-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;400&quot;&gt;
+          &lt;i class&#x3D;&quot;bi bi-telephone flex-shrink-0&quot;&gt;&lt;/i&gt;
+          &lt;div&gt;
+            &lt;h3&gt;Teléfono&lt;/h3&gt;
+            &lt;p&gt;+569 XXXX XXXX&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- Fin Info Teléfono --&gt;
+
+        &lt;div class&#x3D;&quot;info-item d-flex&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;500&quot;&gt;
+          &lt;i class&#x3D;&quot;bi bi-envelope flex-shrink-0&quot;&gt;&lt;/i&gt;
+          &lt;div&gt;
+            &lt;h3&gt;Email&lt;/h3&gt;
+            &lt;p&gt;ejemplo&amp;#64;gmail.com&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- Fin Info Email --&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-lg-8&quot;&gt;
+        &lt;form action&#x3D;&quot;forms/contact.php&quot; method&#x3D;&quot;post&quot; class&#x3D;&quot;php-email-form&quot; data-aos&#x3D;&quot;fade-up&quot; data-aos-delay&#x3D;&quot;200&quot;&gt;
+          &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
+
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Tu Nombre&quot; required&#x3D;&quot;&quot;&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+              &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Tu Email&quot; required&#x3D;&quot;&quot;&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;subject&quot; placeholder&#x3D;&quot;Asunto&quot; required&#x3D;&quot;&quot;&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;message&quot; rows&#x3D;&quot;6&quot; placeholder&#x3D;&quot;Mensaje&quot; required&#x3D;&quot;&quot;&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-12 text-center&quot;&gt;
+              &lt;div class&#x3D;&quot;loading&quot;&gt;Cargando&lt;/div&gt;
+              &lt;div class&#x3D;&quot;error-message&quot;&gt;&lt;/div&gt;
+              &lt;div class&#x3D;&quot;sent-message&quot;&gt;Tu mensaje ha sido enviado. ¡Gracias!&lt;/div&gt;
+
+              &lt;button type&#x3D;&quot;submit&quot;&gt;Enviar Mensaje&lt;/button&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;&lt;!-- Fin Formulario de Contacto --&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+&lt;/section&gt;&lt;!-- /Sección de Contacto --&gt;
+
+  &lt;/main&gt;</code></pre>
     </div>
 
 
@@ -517,8 +712,8 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><main class="main">  <!-- Hero Section -->  <section id="hero" class="hero section dark-background">    <img src="src/assets/img/gym.jpg" alt="gym" data-aos="fade-in">    <div class="container text-center" data-aos="fade-up" data-aos-delay="100">      <div class="row justify-content-center">        <div class="col-lg-8">          <h2>Bienvenido a StrongFit</h2>          <p>¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. </p>          <a routerLink="/registro" class="btn-get-started">Inscríbete</a>        </div>      </div>    </div>  </section>  <!-- Nosotros -->  <section id="about" class="about section">    <div class="container">      <div class="row gy-4">        <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">          <div class="w-100 h-100">            <img src="src/assets/img/ad.webp" class="img-fluid w-100 h-100 object-fit-cover" alt="">          </div>        </div>        <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">          <h3>Quienes somos</h3>          <p>            Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral...          </p>          <ul>            <li>              <i class="bi bi-clipboard-heart-fill"></i>              <div>                <h5>Entrenamiento personalizado</h5>                <p>Diseñamos planes de entrenamiento adaptados a tus necesidades...</p>              </div>            </li>            <li>              <i class="bi bi-lungs-fill"></i>              <div>                <h5>Salud y bienestar</h5>                <p>Creemos que la salud va más allá del ejercicio...</p>              </div>            </li>            <li>              <i class="bi bi-people-fill"></i>              <div>                <h5>Comunidad y compromiso</h5>                <p>Más que un lugar para entrenar, somos una comunidad...</p>              </div>            </li>          </ul>        </div>      </div>    </div>  </section>  <!-- Por qué elegirnos -->  <section id="why-us" class="why-us section">    <div class="container section-title" data-aos="fade-up">      <div><span>¿Por qué</span> <span class="description-title">elegirnos?</span></div>    </div>    <div class="container">      <div class="row gy-4">        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">          <div class="card-item">            <span>01</span>            <h4>Equipo profesional</h4>            <p>Entrenadores certificados con atención personalizada...</p>          </div>        </div>        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">          <div class="card-item">            <span>02</span>            <h4>Resultados medibles</h4>            <p>Diseñamos rutinas con metas reales y evaluaciones constantes...</p>          </div>        </div>        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">          <div class="card-item">            <span>03</span>            <h4>Ambiente seguro y motivador</h4>            <p>Promovemos una cultura de respeto y superación...</p>          </div>        </div>      </div>    </div>  </section>  <!-- Estadísticas -->  <section id="stats" class="stats section">    <div class="container" data-aos="fade-up" data-aos-delay="100">      <div class="row gy-4 justify-content-center">        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>            <p>Sedes</p>          </div>        </div>        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="1546" data-purecounter-duration="1" class="purecounter"></span>            <p>Miembros activos</p>          </div>        </div>        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1" class="purecounter"></span>            <p>Entrenadores certificados</p>          </div>        </div>        <div class="col-lg-3 col-md-6">          <div class="stats-item text-center">            <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>            <p>Clases mensuales</p>          </div>        </div>      </div>    </div>  </section>  <!-- Call to Action -->  <section id="call-to-action" class="call-to-action section dark-background">    <img src="src/assets/img/gyminterior.jpg" alt="">    <div class="container">      <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">        <div class="col-xl-10">          <div class="text-center">            <h3>Mantente en Competencia</h3>            <p>TU LUGAR PARA EL CAMBIO</p>          </div>        </div>      </div>    </div>  </section>  <!-- Galería -->  <section id="gallery" class="section">    <div class="container section-title" data-aos="fade-up">      <h2>Galería</h2>      <div><span>Explora Nuestro</span> <span class="description-title">Gimnasio</span></div>    </div>    <div class="container">      <div class="row g-4">        <div class="col-lg-4 col-md-6" *ngFor="let i of [1,2,3,4,5,6]; let index = index">          <img src="\'src/assets/img/gym.jpg\'" class="gallery-img" alt="Gimnasio">        </div>      </div>    </div>  </section>  <!-- Preguntas Frecuentes -->  <section id="faq" class="faq section">    <div class="container section-title" data-aos="fade-up">      <h2>Preguntas Frecuentes</h2>      <div><span>Resuelve tus dudas en nuestras</span> <span class="description-title">Preguntas Frecuentes</span></div>    </div>    <!-- Aquí van los faq-item como en el HTML original -->  </section>  <!-- Contacto -->  <section id="contact" class="contact section">    <div class="container section-title" data-aos="fade-up">      <h2>Contacto</h2>      <div><span>Contactate con</span> <span class="description-title">Nosotros</span></div>    </div>    <div class="container" data-aos="fade-up" data-aos-delay="100">      <div class="row gy-4">        <div class="col-lg-4">          <div class="info-item d-flex">            <i class="bi bi-telephone flex-shrink-0"></i>            <div>              <h3>Teléfono</h3>              <p>+569 XXXX XXXX</p>            </div>          </div>          <div class="info-item d-flex">            <i class="bi bi-envelope flex-shrink-0"></i>            <div>              <h3>Email</h3>              <p>ejemplo&#64;gmail.com</p>            </div>          </div>        </div>        <div class="col-lg-8">          <!-- formulario de contacto omitido o adaptado si se usa backend -->        </div>      </div>    </div>  </section></main></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+        var COMPONENT_TEMPLATE = '<div><main class="main">    <!-- Inicio -->    <section id="hero" class="hero section dark-background">      <img src="/img/gym.jpg" alt="gym" data-aos="fade-in">      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">        <div class="row justify-content-center">          <div class="col-lg-8">            <h2>Bienvenido a StrongFit</h2>            <p>¡Estás en el lugar correcto! Aquí no hay límites, solo progreso. </p>            <a routerLink="/registro" class="btn-get-started">Inscríbete</a>          </div>        </div>      </div>          </section>    <!-- Quines somos seccion-->    <section id="about" class="about section">      <div class="container">        <div class="row gy-4">        <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">        <div class="w-100 h-100">          <img src="/img/ad.webp" class="img-fluid w-100 h-100 object-fit-cover" alt="">        </div>      </div>          <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">            <h3>Quienes somos</h3>            <p>              Somos un gimnasio enfocado en el desarrollo físico y el bienestar integral. Ofrecemos un espacio profesional, seguro y motivador, donde cada persona encuentra las herramientas necesarias para alcanzar sus objetivos. Nuestro compromiso es acompañarte con experiencia, dedicación y resultados reales.            </p>            <ul>              <li>                <i class="bi bi-clipboard-heart-fill"></i>                <div>                  <h5>Entrenamiento personalizados</h5>                  <p>Diseñamos planes de entrenamiento adaptados a tus necesidades, nivel y metas. Contamos con entrenadores calificados que te guían en cada etapa de tu progreso.</p>                </div>              </li>              <li>                <i class="bi bi-lungs-fill"></i>                <div>                  <h5>Salud y bienestar</h5>                  <p>Creemos que la salud va más allá del ejercicio. Promovemos un enfoque integral que incluye nutrición, recuperación y hábitos saludables para un estilo de vida completo.</p>                </div>              </li>              <li>                <i class="bi bi-people-fill"></i>                <div>                  <h5>Comunidad y compromiso</h5>                  <p>Más que un lugar para entrenar, somos una comunidad. Aquí encontrarás un ambiente de respeto, motivación y compañerismo que impulsa tu evolución constante.</p>                </div>              </li>            </ul>          </div>        </div>      </div>    </section>   <section id="why-us" class="why-us section">  <!-- porque -->  <div class="container section-title" data-aos="fade-up">    <div><span>¿Por qué</span> <span class="description-title">elegirnos?</span></div>  </div>  <div class="container">    <div class="row gy-4">      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">        <div class="card-item">          <span>01</span>          <h4><a class="stretched-link">Equipo profesional</a></h4>          <p>Contamos con entrenadores certificados con amplia experiencia en distintas disciplinas. Te guiamos con atención personalizada y enfoque técnico para que entrenes de forma segura y eficiente, sin importar tu nivel.</p>        </div>      </div>      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">        <div class="card-item">          <span>02</span>          <h4><a class="stretched-link">Resultados medibles</a></h4>          <p>Nuestros programas están diseñados para ofrecer resultados visibles y sostenibles. Evaluamos tu progreso constantemente, adaptando rutinas y objetivos para que avances de forma real y motivadora desde el primer mes.</p>        </div>      </div><!-- Card  -->      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">        <div class="card-item">          <span>03</span>          <h4><a class="stretched-link">Ambiente seguro y motivador</a></h4>          <p>Entrenar en un entorno cómodo, limpio y bien equipado marca la diferencia. Promovemos una cultura de respeto y motivación donde cada persona se siente bienvenida, acompañada y lista para superarse día a día.</p>        </div>      </div><!-- Card  -->    </div>  </div></section><!--  Section --> <section id="stats" class="stats section">  <div class="container" data-aos="fade-up" data-aos-delay="100">    <!-- Agrega \'justify-content-center\' para centrar horizontalmente -->    <div class="row gy-4 justify-content-center">      <div class="col-lg-3 col-md-6">        <div class="stats-item text-center w-100 h-100">          <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>          <p>Sedes</p>        </div>      </div>      <div class="col-lg-3 col-md-6">        <div class="stats-item text-center w-100 h-100">          <span data-purecounter-start="0" data-purecounter-end="1546" data-purecounter-duration="1" class="purecounter"></span>          <p>Miembros activos</p>        </div>      </div>      <div class="col-lg-3 col-md-6">        <div class="stats-item text-center w-100 h-100">          <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1" class="purecounter"></span>          <p>Entrenadores certificados</p>        </div>      </div>       <div class="col-lg-3 col-md-6">        <div class="stats-item text-center w-100 h-100">          <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>          <p>Clases mensuales</p>        </div>      </div>    </div>  </div></section>        <section id="call-to-action" class="call-to-action section dark-background">      <img src="/img/gyminterior.jpg" alt="">      <div class="container">        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">          <div class="col-xl-10">            <div class="text-center">              <h3>Mantente en Competencia</h3>              <p>TU LUGAR PARA EL CAMBIO</p>              <a href=""></a>            </div>          </div>        </div>      </div>    </section>  <!-- Gallery  --><section id="gallery" class="section">  <!-- Section Title -->  <div class="container section-title" data-aos="fade-up">    <h2>Galería</h2>    <div><span>Explora Nuestro</span> <span class="description-title">Gimnasio</span></div>  </div>  <div class="container">    <div class="row g-4">      <!-- Imagen 1 -->      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">        <img src="/img/gym1.jpg"  class="gallery-img" alt="Gimnasio 1">      </div>      <!-- Imagen 2 -->      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150">        <img src="/img/gym2.jpg"  class="gallery-img" alt="Gimnasio 2">      </div>      <!-- Imagen 3 -->      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">        <img src="/img/gym3.jpg"  class="gallery-img"alt="Gimnasio 3">      </div>      <!-- Imagen 4 -->      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="250">        <img src="/img/gym4.jpg"  class="gallery-img" alt="Gimnasio 4">      </div>      <!-- Imagen 5 -->      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">        <img src="/img/gym5.jpg"  class="gallery-img" alt="Gimnasio 5">      </div>      <!-- Imagen 6 -->      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="350">        <img src="/img/gym6.jpg"  class="gallery-img" alt="Gimnasio 6">      </div>    </div>  </div></section>    <!-- Faq Section --><section id="faq" class="faq section">  <!-- Section Title -->  <div class="container section-title" data-aos="fade-up">    <h2>Preguntas Frecuentes</h2>    <div><span>Resuelve tus dudas en nuestras</span> <span class="description-title">Preguntas Frecuentes</span></div>  </div><!-- End Section Title -->  <div class="container">    <div class="row justify-content-center">      <div class="col-lg-8">        <div class="faq-container">          <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">            <i class="faq-icon bi bi-question-circle"></i>            <h3>¿Cuál es el horario de funcionamiento del gimnasio?</h3>            <div class="faq-content">              <p>Estamos abiertos de lunes a viernes de 06:00 a 22:00 hrs, sábados de 08:00 a 20:00 hrs y domingos de 09:00 a 14:00 hrs.</p>            </div>            <i class="faq-toggle bi bi-chevron-right"></i>          </div><!-- End Faq item-->          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">            <i class="faq-icon bi bi-question-circle"></i>            <h3>¿Necesito experiencia previa para inscribirme?</h3>            <div class="faq-content">              <p>No. Nuestros planes están diseñados para todo tipo de personas, desde principiantes hasta avanzados. Contamos con entrenadores que te guiarán desde el primer día.</p>            </div>            <i class="faq-toggle bi bi-chevron-right"></i>          </div><!-- End Faq item-->          <div class="faq-item" data-aos="fade-up" data-aos-delay="400">            <i class="faq-icon bi bi-question-circle"></i>            <h3>¿Qué incluye la inscripción?</h3>            <div class="faq-content">              <p>La inscripción incluye acceso completo a las máquinas, áreas de entrenamiento funcional, asesoría inicial y clases grupales según el plan que elijas.</p>            </div>            <i class="faq-toggle bi bi-chevron-right"></i>          </div><!-- End Faq item-->          <div class="faq-item" data-aos="fade-up" data-aos-delay="500">            <i class="faq-icon bi bi-question-circle"></i>            <h3>¿Puedo congelar mi plan si no puedo asistir por un tiempo?</h3>            <div class="faq-content">              <p>Sí, puedes congelar tu plan hasta por 30 días en el año. Solo debes informarlo con anticipación en recepción o por WhatsApp.</p>            </div>            <i class="faq-toggle bi bi-chevron-right"></i>          </div><!-- End Faq item-->          <div class="faq-item" data-aos="fade-up" data-aos-delay="600">            <i class="faq-icon bi bi-question-circle"></i>            <h3>¿Qué necesito llevar para entrenar?</h3>            <div class="faq-content">              <p>Solo necesitas ropa cómoda, toalla personal y botella de agua. El uso de toalla es obligatorio en las máquinas por higiene.</p>            </div>            <i class="faq-toggle bi bi-chevron-right"></i>          </div><!-- End Faq item-->        </div>      </div>    </div>  </div></section>   <!-- Sección de Contacto --><section id="contact" class="contact section">  <!-- Título de la Sección -->  <div class="container section-title" data-aos="fade-up">    <h2>Contacto</h2>    <div><span>Contactate con</span> <span class="description-title">Nosotros</span></div>  </div><!-- Fin Título de la Sección -->  <div class="container" data-aos="fade-up" data-aos-delay="100">    <div class="row gy-4">      <div class="col-lg-4">        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">          <i class="bi bi-telephone flex-shrink-0"></i>          <div>            <h3>Teléfono</h3>            <p>+569 XXXX XXXX</p>          </div>        </div><!-- Fin Info Teléfono -->        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">          <i class="bi bi-envelope flex-shrink-0"></i>          <div>            <h3>Email</h3>            <p>ejemplo&#64;gmail.com</p>          </div>        </div><!-- Fin Info Email -->      </div>      <div class="col-lg-8">        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">          <div class="row gy-4">            <div class="col-md-6">              <input type="text" name="name" class="form-control" placeholder="Tu Nombre" required="">            </div>            <div class="col-md-6">              <input type="email" class="form-control" name="email" placeholder="Tu Email" required="">            </div>            <div class="col-md-12">              <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">            </div>            <div class="col-md-12">              <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required=""></textarea>            </div>            <div class="col-md-12 text-center">              <div class="loading">Cargando</div>              <div class="error-message"></div>              <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>              <button type="submit">Enviar Mensaje</button>            </div>          </div>        </form>      </div><!-- Fin Formulario de Contacto -->    </div>  </div></section><!-- /Sección de Contacto -->  </main></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>

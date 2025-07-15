@@ -126,6 +126,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>AfterViewInit</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -200,6 +206,9 @@
                             <li>
                                 <a href="#agregarAlCarrito" >agregarAlCarrito</a>
                             </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -242,8 +251,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/app/pages/planes/planes.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">src/app/pages/planes/planes.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -301,19 +310,56 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/app/pages/planes/planes.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, AfterViewInit } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
-
+import AOS from &#x27;aos&#x27;;
 
 /**
-   * @description Componente que muestras los planes del gym.
-   */
+ * @description Componente que muestra los planes del gym.
+ */
 @Component({
   selector: &#x27;app-planes&#x27;,
   standalone: true,
@@ -321,7 +367,12 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
   templateUrl: &#x27;./planes.html&#x27;,
   styleUrls: [&#x27;./planes.css&#x27;]
 })
-export class PlanesComponent {
+export class PlanesComponent implements AfterViewInit {
+
+  ngAfterViewInit(): void {
+    AOS.init(); // Inicializa animaciones
+  }
+
   agregarAlCarrito(nombre: string, precio: number) {
     alert(&#x60;Agregado: ${nombre} - $${precio.toLocaleString(&#x27;es-CL&#x27;)}&#x60;);
   }
@@ -446,7 +497,7 @@ export class PlanesComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><main class="main container py-5">  <!-- Page Title -->  <div class="page-title light-background mb-4">    <div class="d-lg-flex justify-content-between align-items-center">      <h1 class="mb-2 mb-lg-0">Strong Fit tiene un plan para ti, elige tu mejor opción</h1>      <nav class="breadcrumbs">        <ol>          <li><a routerLink="/">Inicio</a></li>          <li class="current">Planes</li>        </ol>      </nav>    </div>  </div>  <!-- Pricing Section -->  <section id="pricing" class="pricing section">    <div class="section-title text-center mb-4" data-aos="fade-up">      <h2><span>Nuestros</span> <span class="description-title">Planes</span></h2>    </div>    <div class="row g-4 g-lg-0">      <!-- Plan Mensual -->      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">        <div class="pricing-item h-100">          <h3>Plan Mensual</h3>          <h4><sup>$</sup>35.000<span> / mes</span></h4>          <ul>            <li><i class="bi bi-check"></i> Acceso libre a todas las instalaciones</li>            <li><i class="bi bi-check"></i> Clases dirigidas ilimitadas</li>            <li><i class="bi bi-check"></i> Evaluación física inicial</li>            <li class="na"><i class="bi bi-x"></i> Descuentos en convenios</li>            <li class="na"><i class="bi bi-x"></i> Regalos promocionales</li>          </ul>          <div class="text-center">            <button class="btn btn-primary" (click)="agregarAlCarrito(\'Plan Mensual\', 35000)">Contratar</button>          </div>        </div>      </div>      <!-- Plan Semestral -->      <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">        <div class="pricing-item h-100">          <h3>Plan Semestral</h3>          <h4><sup>$</sup>180.000<span> / 6 meses</span></h4>          <ul>            <li><i class="bi bi-check"></i> Acceso total a StrongFit</li>            <li><i class="bi bi-check"></i> Clases dirigidas ilimitadas</li>            <li><i class="bi bi-check"></i> Evaluaciones físicas periódicas</li>            <li><i class="bi bi-check"></i> Plan de entrenamiento personalizado</li>            <li class="na"><i class="bi bi-x"></i> Regalo promocional anual</li>          </ul>          <div class="text-center">            <button class="btn btn-primary" (click)="agregarAlCarrito(\'Plan Semestral\', 180000)">Contratar</button>          </div>        </div>      </div>      <!-- Plan Anual -->      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">        <div class="pricing-item h-100">          <h3>Plan Anual</h3>          <h4><sup>$</sup>330.000<span> / año</span></h4>          <ul>            <li><i class="bi bi-check"></i> Acceso ilimitado todo el año</li>            <li><i class="bi bi-check"></i> Clases dirigidas + App + evaluaciones</li>            <li><i class="bi bi-check"></i> Descuentos exclusivos y convenios</li>            <li><i class="bi bi-check"></i> Regalo promocional de bienvenida</li>            <li><i class="bi bi-check"></i> 1 sesión mensual con personal trainer</li>          </ul>          <div class="text-center">            <button class="btn btn-primary" (click)="agregarAlCarrito(\'Plan Anual\', 330000)">Contratar</button>          </div>        </div>      </div>    </div>  </section></main></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PlanesComponent'};
 </script>

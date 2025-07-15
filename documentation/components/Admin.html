@@ -202,12 +202,13 @@ export class Admin {
         <pre class="line-numbers"><code class="language-html">&lt;header class&#x3D;&quot;header d-flex align-items-center sticky-top&quot;&gt;
   &lt;div class&#x3D;&quot;container-fluid container-xl d-flex justify-content-between align-items-center&quot;&gt;
     &lt;a routerLink&#x3D;&quot;/&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;
-      &lt;img src&#x3D;&quot;src/assets/img/logo.png&quot; alt&#x3D;&quot;StrongFit Logo&quot; style&#x3D;&quot;height: 50px;&quot;&gt;
+      &lt;img src&#x3D;&quot;/img/logo.png&quot; alt&#x3D;&quot;StrongFit Logo&quot; style&#x3D;&quot;height: 50px;&quot;&gt;
       &lt;h1 class&#x3D;&quot;sitename ms-2 mb-0&quot;&gt;StrongFit&lt;/h1&gt;
     &lt;/a&gt;
     &lt;nav class&#x3D;&quot;navmenu&quot;&gt;
       &lt;ul&gt;
         &lt;li&gt;&lt;a routerLink&#x3D;&quot;/&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/clientes-gym&quot;&gt;Clientes&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/nav&gt;
     &lt;div class&#x3D;&quot;d-flex align-items-center gap-3&quot;&gt;
@@ -250,8 +251,8 @@ export class Admin {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><header class="header d-flex align-items-center sticky-top">  <div class="container-fluid container-xl d-flex justify-content-between align-items-center">    <a routerLink="/" class="logo d-flex align-items-center">      <img src="src/assets/img/logo.png" alt="StrongFit Logo" style="height: 50px;">      <h1 class="sitename ms-2 mb-0">StrongFit</h1>    </a>    <nav class="navmenu">      <ul>        <li><a routerLink="/">Inicio</a></li>      </ul>    </nav>    <div class="d-flex align-items-center gap-3">      <a class="bi bi-person fs-4" title="Mi cuenta"></a>      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>    </div>  </div></header><router-outlet></router-outlet><footer class="footer dark-background text-center py-3"></footer></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+        var COMPONENT_TEMPLATE = '<div><header class="header d-flex align-items-center sticky-top">  <div class="container-fluid container-xl d-flex justify-content-between align-items-center">    <a routerLink="/" class="logo d-flex align-items-center">      <img src="/img/logo.png" alt="StrongFit Logo" style="height: 50px;">      <h1 class="sitename ms-2 mb-0">StrongFit</h1>    </a>    <nav class="navmenu">      <ul>        <li><a routerLink="/">Inicio</a></li>        <li><a routerLink="/clientes-gym">Clientes</a></li>      </ul>    </nav>    <div class="d-flex align-items-center gap-3">      <a class="bi bi-person fs-4" title="Mi cuenta"></a>      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>    </div>  </div></header><router-outlet></router-outlet><footer class="footer dark-background text-center py-3"></footer></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Admin'};
 </script>

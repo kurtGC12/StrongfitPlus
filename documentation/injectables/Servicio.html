@@ -79,104 +79,50 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Components</li>
-  <li class="breadcrumb-item"
-  >
-  Cliente</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >Servicio</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a href="#info" class="nav-link active"
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#source" class="nav-link"
+            <a href="#source" 
+                class="nav-link"
+                
                 role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
-            <a href="#tree" class="nav-link"
-                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/layouts/cliente/cliente.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/servicio.ts</code>
+        </p>
 
 
 
 
 
-
-<section data-compodoc="block-metadata">
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-cliente</code></td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                            <code>RouterModule</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./cliente.html</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./cliente.css</code></td>
-            </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section data-compodoc="block-index">
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -189,7 +135,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#nombreUsuario" >nombreUsuario</a>
+                                <a href="#usuarioLogueado" >usuarioLogueado</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getUsuario" >getUsuario</a>
+                            </li>
+                            <li>
+                                <a href="#setUsuario" >setUsuario</a>
                             </li>
                         </ul>
                     </td>
@@ -199,18 +163,122 @@
 
 
 
-
         </tbody>
     </table>
 </section>
 
 
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsuario"></a>
+                    <span class="name">
+                        <span ><b>getUsuario</b></span>
+                        <a href="#getUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsuario()</code>
+                </td>
+            </tr>
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="14"
+                                    class="link-to-prism">src/app/services/servicio.ts:14</a></div>
+                        </td>
+                    </tr>
 
 
+            <tr>
+                <td class="col-md-4">
 
-    <section data-compodoc="block-properties">
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUsuario"></a>
+                    <span class="name">
+                        <span ><b>setUsuario</b></span>
+                        <a href="#setUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setUsuario(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="10"
+                                    class="link-to-prism">src/app/services/servicio.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -219,21 +287,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="nombreUsuario"></a>
+                    <a name="usuarioLogueado"></a>
                     <span class="name">
-                        <span ><b>nombreUsuario</b></span>
-                        <a href="#nombreUsuario"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>usuarioLogueado</b></span>
+                        <a href="#usuarioLogueado"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>localStorage.getItem(&#x27;nombre&#x27;) || &#x27;Usuario&#x27;</code>
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/layouts/cliente/cliente.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/servicio.ts:8</a></div>
                         </td>
                     </tr>
 
@@ -242,89 +316,30 @@
     </table>
 </section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { RouterModule } from &#x27;@angular/router&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 
-@Component({
-  selector: &#x27;app-cliente&#x27;,
-  imports: [RouterModule],
-  templateUrl: &#x27;./cliente.html&#x27;,
-  styleUrl: &#x27;./cliente.css&#x27;
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class Cliente {
- nombreUsuario &#x3D; localStorage.getItem(&#x27;nombre&#x27;) || &#x27;Usuario&#x27;;
 
-}
-</code></pre>
+export class Servicio {
+  usuarioLogueado: any &#x3D; null;
+
+  setUsuario(data: any) {
+    this.usuarioLogueado &#x3D; data;
+  }
+
+  getUsuario() {
+    return this.usuarioLogueado;
+  }
+}</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;header class&#x3D;&quot;header d-flex align-items-center sticky-top&quot;&gt;
-  &lt;div class&#x3D;&quot;container-fluid container-xl d-flex justify-content-between align-items-center&quot;&gt;
-    &lt;a routerLink&#x3D;&quot;/inicio&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;
-      &lt;img src&#x3D;&quot;/img/logo.png&quot; alt&#x3D;&quot;StrongFit&quot; style&#x3D;&quot;height: 50px;&quot;&gt;
-      &lt;h1 class&#x3D;&quot;sitename ms-2 mb-0&quot;&gt;StrongFit&lt;/h1&gt;
-    &lt;/a&gt;
-    &lt;nav class&#x3D;&quot;navmenu&quot;&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/planes&quot;&gt;Planes&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/perfil&quot;&gt;Mi Perfil&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-    &lt;div class&#x3D;&quot;d-flex align-items-center gap-3&quot;&gt;
-      &lt;span class&#x3D;&quot;text-white fw-bold&quot;&gt;{{ nombreUsuario }}&lt;/span&gt;
-      &lt;a routerLink&#x3D;&quot;/login&quot; class&#x3D;&quot;btn btn-secondary&quot;&gt;Cerrar sesión&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/header&gt;
-
-&lt;router-outlet&gt;&lt;/router-outlet&gt;
-
-&lt;footer class&#x3D;&quot;footer dark-background text-center py-4&quot;&gt;
-  &lt;p class&#x3D;&quot;text-white mb-0&quot;&gt;© 2025 StrongFit. Todos los derechos reservados.&lt;/p&gt;
-</code></pre>
-    </div>
-
-
-    <div class="tab-pane fade " id="tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><header class="header d-flex align-items-center sticky-top">  <div class="container-fluid container-xl d-flex justify-content-between align-items-center">    <a routerLink="/inicio" class="logo d-flex align-items-center">      <img src="/img/logo.png" alt="StrongFit" style="height: 50px;">      <h1 class="sitename ms-2 mb-0">StrongFit</h1>    </a>    <nav class="navmenu">      <ul>        <li><a routerLink="/planes">Planes</a></li>        <li><a routerLink="/perfil">Mi Perfil</a></li>      </ul>    </nav>    <div class="d-flex align-items-center gap-3">      <span class="text-white fw-bold">{{ nombreUsuario }}</span>      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>    </div>  </div></header><router-outlet></router-outlet><footer class="footer dark-background text-center py-4">  <p class="text-white mb-0">© 2025 StrongFit. Todos los derechos reservados.</p></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'Cliente'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
 
 
 
@@ -363,8 +378,8 @@ export class Cliente {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'Cliente.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'Servicio.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

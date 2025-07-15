@@ -106,6 +106,10 @@
                 role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
         <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -120,15 +124,14 @@
 </p>
 
 
+
+
     <p class="comment">
-        <h3>Description</h3>
+        <h3>Implements</h3>
     </p>
     <p class="comment">
-        <p>mediante el correo electrónico previamente registrado.</p>
-
+                <code>OnInit</code>
     </p>
-
-
 
 
 <section data-compodoc="block-metadata">
@@ -152,6 +155,10 @@
                 <td class="col-md-9"><code>app-recuperar</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
 
             <tr>
                 <td class="col-md-3">imports</td>
@@ -161,6 +168,10 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./recuperar.css</code></td>
+            </tr>
 
 
 
@@ -193,10 +204,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#formulario" >formulario</a>
-                            </li>
-                            <li>
-                                <a href="#mensaje" >mensaje</a>
+                                <a href="#form" >form</a>
                             </li>
                         </ul>
                     </td>
@@ -211,7 +219,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#coincidenPasswords" >coincidenPasswords</a>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#passwordsIguales" >passwordsIguales</a>
                             </li>
                             <li>
                                 <a href="#recuperar" >recuperar</a>
@@ -234,12 +245,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: FormBuilder, http: HttpClient)</code>
+<code>constructor(fb: FormBuilder, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/recuperar/recuperar.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/recuperar/recuperar.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -253,7 +264,6 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -268,26 +278,18 @@
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <ul>
-<li>Inyector del FormBuilder para construir el formulario.</li>
-</ul>
-
-                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>http</td>
+                                                        <td>router</td>
                                                   
                                                         <td>
-                                                                    <code>HttpClient</code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -311,16 +313,53 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="coincidenPasswords"></a>
+                    <a name="ngOnInit"></a>
                     <span class="name">
-                        <span ><b>coincidenPasswords</b></span>
-                        <a href="#coincidenPasswords"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>coincidenPasswords(group: AbstractControl)</code>
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">src/app/pages/recuperar/recuperar.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passwordsIguales"></a>
+                    <span class="name">
+                        <span ><b>passwordsIguales</b></span>
+                        <a href="#passwordsIguales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>passwordsIguales(group: AbstractControl)</code>
                 </td>
             </tr>
 
@@ -395,8 +434,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/app/pages/recuperar/recuperar.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/pages/recuperar/recuperar.ts:49</a></div>
                         </td>
                     </tr>
 
@@ -424,10 +463,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="formulario"></a>
+                    <a name="form"></a>
                     <span class="name">
-                        <span ><b>formulario</b></span>
-                        <a href="#formulario"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -439,38 +478,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/pages/recuperar/recuperar.ts:16</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="mensaje"></a>
-                    <span class="name">
-                        <span ><b>mensaje</b></span>
-                        <a href="#mensaje"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;&#x27;</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/recuperar/recuperar.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/recuperar/recuperar.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -483,105 +491,123 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModule, ValidationErrors } from &#x27;@angular/forms&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
-/**
- * @description Componente para recuperar la contraseña de un usuario
- * mediante el correo electrónico previamente registrado.
- */
 @Component({
   selector: &#x27;app-recuperar&#x27;,
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: &#x27;./recuperar.html&#x27;,
-  imports: [CommonModule , ReactiveFormsModule]
+  styleUrls: [&#x27;./recuperar.css&#x27;]
 })
-export class RecuperarComponent {
-  formulario: FormGroup;
-  mensaje &#x3D; &#x27;&#x27;;
+export class RecuperarComponent implements OnInit {
+  form!: FormGroup;
 
+  constructor(private fb: FormBuilder, private router: Router) {}
 
-  /**
+   /**
    * @description Constructor que inicializa el formulario de recuperación.
    * @param fb - Inyector del FormBuilder para construir el formulario.
    */
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.formulario &#x3D; this.fb.group({
-      correo: [&#x27;&#x27;, [Validators.required, Validators.email]],
-      password: [&#x27;&#x27;, [
+  ngOnInit(): void {
+    this.form &#x3D; this.fb.group({
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      nuevaPassword: [&#x27;&#x27;, [
         Validators.required,
         Validators.pattern(/^(?&#x3D;.*\d)(?&#x3D;.*[A-Z])(?&#x3D;.*[!@#$%^&amp;*]).{8,20}$/)
       ]],
-      confirmar: [&#x27;&#x27;]
-    }, { validators: this.coincidenPasswords });
+      confirmarPassword: [&#x27;&#x27;, Validators.required]
+    }, { validators: this.passwordsIguales });
   }
-/**
+
+  /**
    * @description Verifica si el campo de correo está inválido.
    * @param campo - El nombre del campo a validar.
    * @returns &#x60;true&#x60; si el campo está inválido y fue tocado.
    */
-  coincidenPasswords(group: AbstractControl): ValidationErrors | null {
-    const pass &#x3D; group.get(&#x27;password&#x27;)?.value;
-    const confirmar &#x3D; group.get(&#x27;confirmar&#x27;)?.value;
-    return pass &#x3D;&#x3D;&#x3D; confirmar ? null : { noCoinciden: true };
+  passwordsIguales(group: AbstractControl): ValidationErrors | null {
+    const pass &#x3D; group.get(&#x27;nuevaPassword&#x27;)?.value;
+    const confirm &#x3D; group.get(&#x27;confirmarPassword&#x27;)?.value;
+    return pass &#x3D;&#x3D;&#x3D; confirm ? null : { notSame: true };
   }
-/**
+
+  /**
    * @description Procesa la solicitud de recuperación. Si el correo existe,
    * muestra la contraseña y redirige al login. De lo contrario, alerta error.
    */
   recuperar() {
-    if (this.formulario.valid) {
-      const data &#x3D; {
-        correo: this.formulario.value.correo,
-        password: this.formulario.value.password
-      };
+    if (this.form.invalid) return;
 
-      this.http.post(&#x27;/api/recuperar.php&#x27;, data).subscribe({
-        next: () &#x3D;&gt; this.mensaje &#x3D; &#x27;Contraseña actualizada correctamente.&#x27;,
-        error: () &#x3D;&gt; this.mensaje &#x3D; &#x27;Hubo un problema. Intenta nuevamente.&#x27;
-      });
-    } else {
-      this.formulario.markAllAsTouched();
+    const { email, nuevaPassword } &#x3D; this.form.getRawValue();
+    const usuarios &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarios&#x27;) || &#x27;[]&#x27;);
+    const index &#x3D; usuarios.findIndex((u: any) &#x3D;&gt; u.email &#x3D;&#x3D;&#x3D; email);
+
+    if (index &#x3D;&#x3D;&#x3D; -1) {
+      alert(&#x27;No se encontró ningún usuario con ese correo.&#x27;);
+      return;
     }
+
+    usuarios[index].password &#x3D; nuevaPassword;
+    localStorage.setItem(&#x27;usuarios&#x27;, JSON.stringify(usuarios));
+
+    alert(&#x27;Contraseña actualizada correctamente. Ahora puedes iniciar sesión.&#x27;);
+    this.router.navigate([&#x27;/login&#x27;]);
   }
 }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;container my-5&quot;&gt;
-  &lt;h1 class&#x3D;&quot;text-center mb-4&quot;&gt;Recuperar Contraseña&lt;/h1&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex justify-content-center align-items-center min-vh-100&quot;&gt;
+  &lt;div id&#x3D;&quot;form-recuperar&quot; class&#x3D;&quot;formulario-strongfit&quot;&gt;
+    &lt;h1 class&#x3D;&quot;text-center mb-4&quot;&gt;Recuperar Contraseña&lt;/h1&gt;
 
-  &lt;form [formGroup]&#x3D;&quot;formulario&quot; (ngSubmit)&#x3D;&quot;recuperar()&quot; class&#x3D;&quot;formulario-strongfit&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;recuperar()&quot;&gt;
+      &lt;!-- Email --&gt;
+      &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+        &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;form-label&quot;&gt;Correo electrónico registrado&lt;/label&gt;
+        &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;)?.touched &amp;&amp; form.get(&#x27;email&#x27;)?.invalid&quot; class&#x3D;&quot;text-danger small&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;El correo es obligatorio.&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;)?.errors?.[&#x27;email&#x27;]&quot;&gt;Debe tener formato válido.&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-      &lt;label for&#x3D;&quot;correo&quot; class&#x3D;&quot;form-label&quot;&gt;Correo electrónico registrado&lt;/label&gt;
-      &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;correo&quot; formControlName&#x3D;&quot;correo&quot; class&#x3D;&quot;form-control&quot;
-             [class.is-invalid]&#x3D;&quot;formulario.get(&#x27;correo&#x27;)?.invalid &amp;&amp; formulario.get(&#x27;correo&#x27;)?.touched&quot;&gt;
-      &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;Correo inválido&lt;/div&gt;
-    &lt;/div&gt;
+      &lt;!-- Nueva contraseña --&gt;
+      &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+        &lt;label for&#x3D;&quot;nuevaPassword&quot; class&#x3D;&quot;form-label&quot;&gt;Nueva contraseña&lt;/label&gt;
+        &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;nuevaPassword&quot; formControlName&#x3D;&quot;nuevaPassword&quot; class&#x3D;&quot;form-control&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;form.get(&#x27;nuevaPassword&#x27;)?.touched &amp;&amp; form.get(&#x27;nuevaPassword&#x27;)?.invalid&quot; class&#x3D;&quot;text-danger small&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;form.get(&#x27;nuevaPassword&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;La contraseña es obligatoria.&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;form.get(&#x27;nuevaPassword&#x27;)?.errors?.[&#x27;pattern&#x27;]&quot;&gt;
+            Debe tener entre 8 y 20 caracteres, una mayúscula, un número y un símbolo.
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-      &lt;label for&#x3D;&quot;password&quot; class&#x3D;&quot;form-label&quot;&gt;Nueva contraseña&lt;/label&gt;
-      &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot;
-             [class.is-invalid]&#x3D;&quot;formulario.get(&#x27;password&#x27;)?.invalid &amp;&amp; formulario.get(&#x27;password&#x27;)?.touched&quot;&gt;
-      &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;Debe tener entre 8 y 20 caracteres, una mayúscula, un número y un símbolo.&lt;/div&gt;
-    &lt;/div&gt;
+      &lt;!-- Confirmar contraseña --&gt;
+      &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+        &lt;label for&#x3D;&quot;confirmarPassword&quot; class&#x3D;&quot;form-label&quot;&gt;Confirmar nueva contraseña&lt;/label&gt;
+        &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;confirmarPassword&quot; formControlName&#x3D;&quot;confirmarPassword&quot; class&#x3D;&quot;form-control&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;form.hasError(&#x27;notSame&#x27;) &amp;&amp; form.get(&#x27;confirmarPassword&#x27;)?.touched&quot; class&#x3D;&quot;text-danger small&quot;&gt;
+          Las contraseñas deben coincidir.
+        &lt;/div&gt;
+      &lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
-      &lt;label for&#x3D;&quot;confirmar&quot; class&#x3D;&quot;form-label&quot;&gt;Confirmar nueva contraseña&lt;/label&gt;
-      &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;confirmar&quot; formControlName&#x3D;&quot;confirmar&quot; class&#x3D;&quot;form-control&quot;
-             [class.is-invalid]&#x3D;&quot;formulario.hasError(&#x27;noCoinciden&#x27;) &amp;&amp; formulario.get(&#x27;confirmar&#x27;)?.touched&quot;&gt;
-      &lt;div class&#x3D;&quot;invalid-feedback&quot;&gt;Las contraseñas no coinciden.&lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary w-100&quot; [disabled]&#x3D;&quot;formulario.invalid&quot;&gt;Recuperar&lt;/button&gt;
-
-    &lt;div *ngIf&#x3D;&quot;mensaje&quot; class&#x3D;&quot;alert alert-info mt-3 text-center&quot;&gt;{{ mensaje }}&lt;/div&gt;
-  &lt;/form&gt;
-&lt;/main&gt;</code></pre>
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-success w-100&quot;&gt;RECUPERAR&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./recuperar.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
@@ -608,8 +634,8 @@ export class RecuperarComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><main class="container my-5">  <h1 class="text-center mb-4">Recuperar Contraseña</h1>  <form [formGroup]="formulario" (ngSubmit)="recuperar()" class="formulario-strongfit">    <div class="mb-3">      <label for="correo" class="form-label">Correo electrónico registrado</label>      <input type="email" id="correo" formControlName="correo" class="form-control"             [class.is-invalid]="formulario.get(\'correo\')?.invalid && formulario.get(\'correo\')?.touched">      <div class="invalid-feedback">Correo inválido</div>    </div>    <div class="mb-3">      <label for="password" class="form-label">Nueva contraseña</label>      <input type="password" id="password" formControlName="password" class="form-control"             [class.is-invalid]="formulario.get(\'password\')?.invalid && formulario.get(\'password\')?.touched">      <div class="invalid-feedback">Debe tener entre 8 y 20 caracteres, una mayúscula, un número y un símbolo.</div>    </div>    <div class="mb-3">      <label for="confirmar" class="form-label">Confirmar nueva contraseña</label>      <input type="password" id="confirmar" formControlName="confirmar" class="form-control"             [class.is-invalid]="formulario.hasError(\'noCoinciden\') && formulario.get(\'confirmar\')?.touched">      <div class="invalid-feedback">Las contraseñas no coinciden.</div>    </div>    <button type="submit" class="btn btn-primary w-100" [disabled]="formulario.invalid">Recuperar</button>    <div *ngIf="mensaje" class="alert alert-info mt-3 text-center">{{ mensaje }}</div>  </form></main></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex justify-content-center align-items-center min-vh-100">  <div id="form-recuperar" class="formulario-strongfit">    <h1 class="text-center mb-4">Recuperar Contraseña</h1>    <form [formGroup]="form" (ngSubmit)="recuperar()">      <!-- Email -->      <div class="mb-3">        <label for="email" class="form-label">Correo electrónico registrado</label>        <input type="email" id="email" formControlName="email" class="form-control">        <div *ngIf="form.get(\'email\')?.touched && form.get(\'email\')?.invalid" class="text-danger small">          <div *ngIf="form.get(\'email\')?.errors?.[\'required\']">El correo es obligatorio.</div>          <div *ngIf="form.get(\'email\')?.errors?.[\'email\']">Debe tener formato válido.</div>        </div>      </div>      <!-- Nueva contraseña -->      <div class="mb-3">        <label for="nuevaPassword" class="form-label">Nueva contraseña</label>        <input type="password" id="nuevaPassword" formControlName="nuevaPassword" class="form-control">        <div *ngIf="form.get(\'nuevaPassword\')?.touched && form.get(\'nuevaPassword\')?.invalid" class="text-danger small">          <div *ngIf="form.get(\'nuevaPassword\')?.errors?.[\'required\']">La contraseña es obligatoria.</div>          <div *ngIf="form.get(\'nuevaPassword\')?.errors?.[\'pattern\']">            Debe tener entre 8 y 20 caracteres, una mayúscula, un número y un símbolo.          </div>        </div>      </div>      <!-- Confirmar contraseña -->      <div class="mb-3">        <label for="confirmarPassword" class="form-label">Confirmar nueva contraseña</label>        <input type="password" id="confirmarPassword" formControlName="confirmarPassword" class="form-control">        <div *ngIf="form.hasError(\'notSame\') && form.get(\'confirmarPassword\')?.touched" class="text-danger small">          Las contraseñas deben coincidir.        </div>      </div>      <button type="submit" class="btn btn-success w-100">RECUPERAR</button>    </form>  </div></div></div>'
+    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RecuperarComponent'};
 </script>
