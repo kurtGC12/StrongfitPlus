@@ -1,0 +1,43 @@
+ [
+ 
+ {
+    "id": 1,
+    "nombre": "Juan Pérez",
+    "edad": 29,
+    "email": "juan.perez@mail.com",
+    "plan": "Full",
+    "estado": "Activo"
+  },
+  {
+    "id": 2,
+    "nombre": "Carla Soto",
+    "edad": 35,
+    "email": "carla.soto@mail.com",
+    "plan": "Pro",
+    "estado": "Inactivo"
+  },
+  {
+    "id": 3,
+    "nombre": "Pedro González",
+    "edad": 40,
+    "email": "pedro.gonzalez@mail.com",
+    "plan": "Básico",
+    "estado": "Activo"
+  },
+  {
+    "id": 4,
+    "nombre": "Laura Martínez",
+    "edad": 27,
+    "email": "laura.martinez@mail.com",
+    "plan": "Full",
+    "estado": "Inactivo"
+  },
+  {
+    "id": 5,
+    "nombre": "Miguel Torres",
+    "edad": 32,
+    "email": "miguel.torres@mail.com",
+    "plan": "Pro",
+    "estado": "Activo"
+  }
+]

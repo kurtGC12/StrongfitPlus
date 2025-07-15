@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
  * Permite visualizar y gestionar funciones administrativas del sistema.
  */
 
-
 interface Usuario {
   nombre: string;
   usuario: string;

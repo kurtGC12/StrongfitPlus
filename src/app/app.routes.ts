@@ -15,6 +15,7 @@ import { PlanesComponent } from './pages/planes/planes';
 import { CarritoComponent } from './pages/carrito/carrito';
 import { AdminComponent } from './pages/admin/admin';
 import { ServiciosComponent } from './pages/servicios/servicios';
+import {  ClienteFormComponent } from './pages/clientes-gym/clientes-gym';
 
 export const routes: Routes = [
   {
@@ -42,7 +43,8 @@ export const routes: Routes = [
     path: 'admin',
     component: Admin,
     children: [
-      { path: 'admin', component: AdminComponent }
+      { path: 'admin', component: AdminComponent },
+      { path: 'clientes', component: ClienteFormComponent }
     ] 
   },
   // Fallback
