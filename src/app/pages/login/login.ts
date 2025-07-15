@@ -1,53 +1,82 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { RouterModule, Router } from '@angular/router';
 
-
-/**
- * @description Intenta iniciar sesión con los datos ingresados en el formulario.
- * @param {string} email Correo electrónico del usuario.
- * @param {string} password Contraseña del usuario.
- * @returns {boolean} Retorna true si la autenticación fue exitosa.
- */
 @Component({
   selector: 'app-login',
-  templateUrl: './login.html',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  templateUrl: './login.html',
+  styleUrls: ['./login.css']
 })
 export class LoginComponent {
-  authService: any;
-login() {
-  const usuario = this.loginForm.get('usuario')?.value;
-  const password = this.loginForm.get('password')?.value;
+  form: any;
+  loginForm: any;
 
-  
-  this.authService.login(usuario, password);
-}
-
-  loginForm: FormGroup;
- /**
-   * @description Constructor del componente.
-   * @param fb - Inyección del FormBuilder para crear el formulario reactivo.
-   * @param router - Inyección del Router para redirección posterior al login.
-   */
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-      correo: ['', [Validators.required, Validators.email]],
-      contrasena: ['', [Validators.required, Validators.minLength(6)]]
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
     });
+    this.crearAdminPorDefecto();
   }
-/**
-   * @description Función que se ejecuta al enviar el formulario.
-   * Valida los datos y redirige al usuario si son correctos.
-   */
-  enviar() {
-    if (this.loginForm.valid) {
-      const { correo, contrasena } = this.loginForm.value;
-      console.log('Enviando login con:', correo, contrasena);
-      
-    } else {
-      this.loginForm.markAllAsTouched();
+
+  // Crear usuario admin si no existe
+  crearAdminPorDefecto() {
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
+    const existeAdmin = usuarios.some((user: any) => user.email === 'admin@strongfit.cl');
+
+    if (!existeAdmin) {
+      const admin = {
+        nombre: 'Administrador',
+        usuario: 'admin',
+        email: 'admin@strongfit.cl',
+        password: 'Admin123#',
+        fechaNacimiento: '2004-03-12',
+        rol: 'admin',
+      };
+
+      usuarios.push(admin);
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      console.log('🛠 Usuario admin creado por defecto.');
     }
   }
+
+  // Lógica de login
+  login() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+    const { email, password } = this.form.value;
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
+    const usuario = usuarios.find((u: any) => u.email === email && u.password === password);
+
+    if (usuario) {
+      usuario.logueado = true;
+      localStorage.setItem('usuarioActivo', JSON.stringify(usuario));
+
+      // Redirigir según rol
+      if (usuario.rol === 'admin') {
+        this.router.navigate(['/admin']);
+      } else {
+        this.router.navigate(['/inicio/inicio']);
+      }
+
+    } else {
+      alert('Correo o contraseña incorrectos.');
+    }
+    
+  }
+  ngOnInit(): void {
+  document.body.classList.add('login');
+}
+
+ngOnDestroy(): void {
+  document.body.classList.remove('login');
+}
 }

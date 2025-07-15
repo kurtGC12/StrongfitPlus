@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import AOS from 'aos';
 
 /**
-   * @description Componente que muestras los planes del gym.
-   */
+ * @description Componente que muestra los planes del gym.
+ */
 @Component({
   selector: 'app-planes',
   standalone: true,
@@ -12,7 +12,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './planes.html',
   styleUrls: ['./planes.css']
 })
-export class PlanesComponent {
+export class PlanesComponent implements AfterViewInit {
+
+  ngAfterViewInit(): void {
+    AOS.init(); // Inicializa animaciones
+  }
+
   agregarAlCarrito(nombre: string, precio: number) {
     alert(`Agregado: ${nombre} - $${precio.toLocaleString('es-CL')}`);
   }

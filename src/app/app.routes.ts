@@ -14,6 +14,7 @@ import { PerfilComponent } from './pages/perfil/perfil';
 import { PlanesComponent } from './pages/planes/planes';
 import { CarritoComponent } from './pages/carrito/carrito';
 import { AdminComponent } from './pages/admin/admin';
+import { ServiciosComponent } from './pages/servicios/servicios';
 
 export const routes: Routes = [
   {
@@ -24,11 +25,12 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'registro', component: RegistroComponent },
       { path: 'planes', component: PlanesComponent },
-      { path: 'recuperar', component: RecuperarComponent }
+      { path: 'recuperar', component: RecuperarComponent },
+      {path: 'servicios', component: ServiciosComponent}
     ]
   },
   {
-    path: '',
+    path: 'inicio',
     component: Cliente,
     children: [
       { path: 'inicio', component: InicioClienteComponent },
@@ -36,12 +38,12 @@ export const routes: Routes = [
       { path: 'carrito', component: CarritoComponent }
     ]
   },
-  {
-    path: '',
+ {
+    path: 'admin',
     component: Admin,
     children: [
       { path: 'admin', component: AdminComponent }
-    ]
+    ] 
   },
   // Fallback
   { path: '**', redirectTo: '' }

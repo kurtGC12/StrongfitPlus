@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -20,4 +21,13 @@ export class HomeComponent implements OnInit {
       span.textContent = usuario.nombre;
     }
   }
+
+   /**
+   * @description Inicializa la animaciones de AOS (Animate On Scroll).
+   * @returns {void}
+
+   */
+  ngAfterViewInit(): void {
+      AOS.init(); // Inicializa animaciones
+    }
 }

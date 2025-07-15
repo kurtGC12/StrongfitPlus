@@ -1,8 +1,6 @@
-
-
 <main class="container my-5">
   <div class="text-center">
-    <h2>¡Bienvenido/a, {{ nombreUsuario }}! 💪</h2>
+    <h2>¡Bienvenido/a, {{ nombre }}! 💪</h2>
     <p class="lead">Gracias por ser parte de la comunidad StrongFit.</p>
   </div>
 
@@ -13,10 +11,11 @@
           <i class="bi bi-person-circle fs-1 text-success"></i>
           <h5 class="card-title mt-3">Mi Perfil</h5>
           <p class="card-text">Actualiza tus datos personales y preferencias.</p>
-          <a routerLink="/perfil" class="btn btn-outline-success">Editar Perfil</a>
+          <a routerLink="/inicio/perfil" class="btn btn-outline-success">Editar Perfil</a>
         </div>
       </div>
     </div>
+
     <div class="col-md-4 text-center">
       <div class="card shadow-sm">
         <div class="card-body">
@@ -27,16 +26,21 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-4 text-center">
       <div class="card shadow-sm">
         <div class="card-body">
           <i class="bi bi-basket fs-1 text-danger"></i>
           <h5 class="card-title mt-3">Mi Carrito</h5>
           <p class="card-text">Revisa y confirma tus contrataciones.</p>
-          <a routerLink="/carrito" class="btn btn-outline-danger">Ir al Carrito</a>
+          <a routerLink="/inicio/carrito" class="btn btn-outline-danger">Ir al Carrito</a>
         </div>
       </div>
     </div>
   </div>
-</main>
 
+  <div class="text-end mt-5">
+    <span class="fw-bold me-3">{{ usuario }}</span>
+    <button class="btn btn-secondary" (click)="cerrarSesion()">Cerrar sesión</button>
+  </div>
+</main>

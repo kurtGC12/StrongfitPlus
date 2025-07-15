@@ -1,39 +1,40 @@
 <main class="container my-5">
   <h1 class="text-center mb-4">Editar Perfil</h1>
-  <form [formGroup]="formulario" (ngSubmit)="guardar()" class="formulario-strongfit" novalidate>
 
+  <form [formGroup]="form" (ngSubmit)="guardar()" class="formulario-strongfit">
     <div class="mb-3">
-      <label class="form-label">Nombre completo</label>
-      <input type="text" formControlName="nombre" class="form-control"
-             [class.is-invalid]="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
-      <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <label for="nombre" class="form-label">Nombre completo</label>
+      <input type="text" id="nombre" class="form-control" formControlName="nombre">
+      <div *ngIf="form.get('nombre')?.touched && form.get('nombre')?.invalid" class="text-danger small">
+        Este campo es obligatorio.
+      </div>
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Nombre de usuario</label>
-      <input type="text" formControlName="usuario" class="form-control"
-             [class.is-invalid]="formulario.get('usuario')?.invalid && formulario.get('usuario')?.touched">
-      <div class="invalid-feedback">Nombre de usuario requerido.</div>
+      <label for="usuario" class="form-label">Nombre de usuario</label>
+      <input type="text" id="usuario" class="form-control" formControlName="usuario">
+      <div *ngIf="form.get('usuario')?.touched && form.get('usuario')?.invalid" class="text-danger small">
+        Nombre de usuario requerido.
+      </div>
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Correo electrónico</label>
-      <input type="email" formControlName="email" class="form-control">
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
       <div class="form-text">Este dato no puede modificarse.</div>
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Fecha de nacimiento</label>
-      <input type="date" formControlName="fechaNacimiento" class="form-control"
-             [class.is-invalid]="formulario.get('fechaNacimiento')?.invalid && formulario.get('fechaNacimiento')?.touched">
-      <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+      <input type="date" id="fechaNacimiento" class="form-control" formControlName="fechaNacimiento">
+      <div *ngIf="form.get('fechaNacimiento')?.errors?.['edadMinima']" class="text-danger small">
+        Debes tener al menos 13 años.
+      </div>
     </div>
 
     <div class="d-flex justify-content-between">
-      <button type="submit" class="btn btn-primary">Guardar cambios</button>
-      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Guardar cambios</button>
+      <button type="button" class="btn btn-secondary" (click)="cerrarSesion()">Cerrar sesión</button>
     </div>
-
-    <div *ngIf="mensaje" class="alert alert-info mt-3 text-center">{{ mensaje }}</div>
   </form>
 </main>

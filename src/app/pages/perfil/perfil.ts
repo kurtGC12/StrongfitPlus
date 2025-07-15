@@ -1,63 +1,75 @@
-
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModule, ValidationErrors } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
-/**
- * @description Componente para la modificación del perfil de usuario.
- * Permite actualizar nombre, correo, fecha de nacimiento y contraseña.
- */
 @Component({
   selector: 'app-perfil',
-  imports: [CommonModule , ReactiveFormsModule],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './perfil.html',
-  styleUrl: './perfil.css'
+  styleUrls: ['./perfil.css']
 })
-
 export class PerfilComponent implements OnInit {
-  formulario: FormGroup;
-  mensaje = '';
+  form!: FormGroup;
+  usuarioOriginal: any = null;
   perfilForm: any;
 
-   /**
-   * @description Constructor del componente. Carga el usuario activo y llena el formulario con sus datos.
-   * @param fb - Inyector del FormBuilder para construir el formulario reactivo.
-   */
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.formulario = this.fb.group({
-      nombre: ['', Validators.required],
-      usuario: ['', Validators.required],
-      email: [{ value: '', disabled: true }],
-      fechaNacimiento: ['', Validators.required]
+  constructor(private fb: FormBuilder, private router: Router) {}
+
+  ngOnInit(): void {
+    const user = localStorage.getItem('usuarioActivo');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
+    if (!user) {
+      alert('Debes iniciar sesión.');
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    this.usuarioOriginal = JSON.parse(user);
+
+    this.form = this.fb.group({
+      nombre: [this.usuarioOriginal.nombre, Validators.required],
+      usuario: [this.usuarioOriginal.usuario, Validators.required],
+      email: [{ value: this.usuarioOriginal.email, disabled: true }],
+      fechaNacimiento: [this.usuarioOriginal.fechaNacimiento, [Validators.required, this.validarEdadMinima]]
     });
   }
 
-  ngOnInit(): void {
-    
-    const datosUsuario = {
-      nombre: 'Cristóbal Valenzuela',
-      usuario: 'cvalenzuela',
-      email: 'cristobal@example.com',
-      fechaNacimiento: '1990-01-01'
-    };
+  validarEdadMinima(control: any) {
+    const fecha = new Date(control.value);
+    const hoy = new Date();
+    const edad = hoy.getFullYear() - fecha.getFullYear();
+    const cumpleAñosEsteAño = new Date(fecha.setFullYear(hoy.getFullYear())) <= hoy;
 
-    this.formulario.patchValue(datosUsuario);
+    return (edad > 13 || (edad === 13 && cumpleAñosEsteAño)) ? null : { edadMinima: true };
   }
-  /**
-   * @description Guarda los cambios realizados en el perfil del usuario.
-   * Actualiza tanto `usuarioActivo` como la lista completa de usuarios en `localStorage`.
-   */
-  guardar() {
-    if (this.formulario.valid) {
-      const datos = this.formulario.getRawValue(); 
 
-      this.http.post('/api/actualizar_perfil.php', datos).subscribe({
-        next: () => this.mensaje = 'Perfil actualizado correctamente.',
-        error: () => this.mensaje = 'Error al actualizar perfil.'
-      });
-    } else {
-      this.formulario.markAllAsTouched();
+  guardar() {
+    if (this.form.invalid) return;
+
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    const index = usuarios.findIndex((u: any) => u.email === this.usuarioOriginal.email);
+
+    if (index !== -1) {
+      usuarios[index] = {
+        ...usuarios[index],
+        nombre: this.form.value.nombre,
+        usuario: this.form.value.usuario,
+        fechaNacimiento: this.form.value.fechaNacimiento
+      };
+
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      localStorage.setItem('usuarioActivo', JSON.stringify(usuarios[index]));
+
+      alert('Perfil actualizado correctamente.');
     }
+  }
+
+  cerrarSesion() {
+    localStorage.removeItem('usuarioActivo');
+    this.router.navigate(['/login']);
   }
 }

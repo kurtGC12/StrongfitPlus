@@ -1,18 +1,35 @@
-<form [formGroup]="loginForm" (ngSubmit)="enviar()">
+<main class="container my-5">
+  <form [formGroup]="form" (ngSubmit)="login()" id="form-login" class="formulario-strongfit">
 
-  <input type="email" formControlName="correo" placeholder="Correo">
-  <div *ngIf="loginForm.get('correo')?.touched && loginForm.get('correo')?.invalid">
-    <small *ngIf="loginForm.get('correo')?.errors?.['required']">Correo obligatorio</small>
-    <small *ngIf="loginForm.get('correo')?.errors?.['email']">Formato inválido</small>
-  </div>
+    <h1 class="text-center mb-4">Iniciar Sesión</h1>
 
-  <input type="password" formControlName="contrasena" placeholder="Contraseña">
-  <div *ngIf="loginForm.get('contrasena')?.touched && loginForm.get('contrasena')?.invalid">
-    <small *ngIf="loginForm.get('contrasena')?.errors?.['required']">Contraseña obligatoria</small>
-    <small *ngIf="loginForm.get('contrasena')?.errors?.['minlength']">Mínimo 6 caracteres</small>
-  </div>
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input type="email" id="email" class="form-control" formControlName="email" placeholder="correo@ejemplo.com">
+      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="text-danger small">
+        <div *ngIf="form.get('email')?.errors?.['required']">El correo es obligatorio.</div>
+        <div *ngIf="form.get('email')?.errors?.['email']">Debe tener formato válido.</div>
+      </div>
+    </div>
 
-  <button type="submit">Ingresar</button>
-  <button type="button" (click)="loginForm.reset()">Limpiar</button>
+    <!-- Contraseña -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" id="password" class="form-control" formControlName="password" placeholder="Contraseña">
+      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="text-danger small">
+        <div *ngIf="form.get('password')?.errors?.['required']">La contraseña es obligatoria.</div>
+        <div *ngIf="form.get('password')?.errors?.['minlength']">Debe tener al menos 6 caracteres.</div>
+      </div>
+    </div>
 
-</form>
+    <!-- Botón -->
+    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+
+    <!-- Enlaces -->
+    <div class="mt-3 text-center">
+      <a routerLink="/recuperar">¿Olvidaste tu contraseña?</a><br>
+      <a routerLink="/registro">¿No tienes cuenta? Regístrate</a>
+    </div>
+  </form>
+</main>

@@ -2038,3 +2038,39 @@ section,
   border-color: var(--accent-color);
   color: var(--contrast-color);
 }
+body.login {
+      background-image: url('/img/gym.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main.container.my-5 {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    #form-login {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+#form-recuperar {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
