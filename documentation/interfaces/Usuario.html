@@ -130,7 +130,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Permite visualizar y gestionar funciones administrativas del sistema.</p>
+                <p>Muestra una tabla con la lista de usuarios, con opciones para editar o eliminar.</p>
 
             </p>
 
@@ -409,9 +409,10 @@ import { Router } from &#x27;@angular/router&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 
 /**
- * @description Componente para la vista de administrador.
- * Permite visualizar y gestionar funciones administrativas del sistema.
+ * @description  Componente que permite gestionar usuarios dentro del panel de administración.
+ * Muestra una tabla con la lista de usuarios, con opciones para editar o eliminar.
  */
+
 
 interface Usuario {
   nombre: string;
@@ -421,7 +422,7 @@ interface Usuario {
   rol: string;
   logueado?: boolean;
 }
-
+ 
 @Component({
   selector: &#x27;app-admin&#x27;,
   templateUrl: &#x27;./admin.html&#x27;,
@@ -429,6 +430,9 @@ interface Usuario {
     imports: [CommonModule, FormsModule]
 })
 export class AdminComponent implements OnInit {
+   /**
+   * Lista de usuarios disponibles en el sistema.
+   */
   usuarios: Usuario[] &#x3D; [];
   usuarioActivo: Usuario | null &#x3D; null;
   usuarioEditando: Usuario | null &#x3D; null;
@@ -436,7 +440,10 @@ export class AdminComponent implements OnInit {
   indexParaEliminar: number | null &#x3D; null;
 
   constructor(private router: Router) {}
-
+  /**
+   * Inicializa el componente y verifica si el usuario activo es un administrador.
+   * Si no es administrador, redirige al login.
+   */
   ngOnInit(): void {
     this.usuarioActivo &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarioActivo&#x27;) || &#x27;null&#x27;);
 
@@ -448,16 +455,24 @@ export class AdminComponent implements OnInit {
 
     this.cargarUsuarios();
   }
-
+  /**
+   * Carga la lista de usuarios desde el localStorage.
+   * Si no hay usuarios, inicializa con un array vacío.
+   */
   cargarUsuarios() {
     this.usuarios &#x3D; JSON.parse(localStorage.getItem(&#x27;usuarios&#x27;) || &#x27;[]&#x27;);
   }
-
+  /**
+   * Abre el modal de edición para el usuario en la posición indicada.
+   * @param index Índice del usuario dentro del array &#x60;usuarios&#x60;
+   */
   abrirEditar(index: number) {
     this.indexEditando &#x3D; index;
     this.usuarioEditando &#x3D; { ...this.usuarios[index] };
   }
-
+    /**
+   * Guarda los cambios realizados en el usuario editado y actualiza la lista.
+   */
   guardarEdicion() {
     if (this.indexEditando !&#x3D;&#x3D; null &amp;&amp; this.usuarioEditando) {
       this.usuarios[this.indexEditando] &#x3D; this.usuarioEditando;
@@ -472,11 +487,17 @@ export class AdminComponent implements OnInit {
       alert(&#x27;Usuario actualizado correctamente.&#x27;);
     }
   }
-
+  /**
+   * Abre el modal de confirmación para eliminar un usuario.
+   * @param index Índice del usuario a eliminar
+   */
   abrirEliminar(index: number) {
     this.indexParaEliminar &#x3D; index;
   }
-
+  /**
+   * Confirma la eliminación del usuario seleccionado.
+   * Si el usuario eliminado es el activo, redirige al login.
+   */
   confirmarEliminar() {
     if (this.indexParaEliminar !&#x3D;&#x3D; null) {
       const eliminado &#x3D; this.usuarios.splice(this.indexParaEliminar, 1)[0];

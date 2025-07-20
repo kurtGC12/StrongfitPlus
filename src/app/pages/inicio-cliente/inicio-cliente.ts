@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
  * Muestra contenido informativo y acceso a las funcionalidades principales del sistema.
  */
 
-
 @Component({
   selector: 'app-inicio-cliente',
   standalone: true,
@@ -21,7 +20,10 @@ export class InicioClienteComponent implements OnInit {
   usuario: string = '';
 
   constructor(private router: Router) {}
-
+  /**
+   * @description Inicializa el componente verificando si el usuario está logueado.
+   * Si no está logueado, redirige al login.
+   */
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('usuarioActivo') || 'null');
 
@@ -34,7 +36,9 @@ export class InicioClienteComponent implements OnInit {
     this.nombre = user.nombre;
     this.usuario = user.usuario;
   }
-
+  /**
+   * @description Cierra la sesión del usuario y redirige al login.
+   */
   cerrarSesion(): void {
     localStorage.removeItem('usuarioActivo');
     this.router.navigate(['/login']);

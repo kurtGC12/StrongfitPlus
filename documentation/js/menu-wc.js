@@ -69,10 +69,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
-                                <a href="components/Admin.html" data-type="entity-link" >Admin</a>
+                                <a href="components/AdminComponent.html" data-type="entity-link" >AdminComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/AdminComponent.html" data-type="entity-link" >AdminComponent</a>
+                                <a href="components/AdminPanel.html" data-type="entity-link" >AdminPanel</a>
                             </li>
                             <li class="link">
                                 <a href="components/AppComponent.html" data-type="entity-link" >AppComponent</a>

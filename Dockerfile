@@ -18,10 +18,13 @@ RUN npm run build
 
 # Etapa 2: Producción con Nginx 
 # Utiliza una imagen de Nginx para servir la aplicación compilada
-FROM nginx:alpine
+FROM node:22.12.0 AS production
 
-COPY --from=builder /app/dist/StrongfitPlus /usr/share/nginx/html
+WORKDIR /app
+
+COPY --from=builder /app/dist/StrongfitPlus /app/dist/StrongfitPlus-angular
+COPY --from=builder /app/dist /app/node_modules
 
 EXPOSE 8080
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "-g","dist/StrongfitPlus/serve/serve.mjs","daemon off;"]

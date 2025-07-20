@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro';
+import { By } from '@angular/platform-browser';
 
 describe('RegistroComponent', () => {
   let component: RegistroComponent;
@@ -29,4 +30,14 @@ describe('RegistroComponent', () => {
     });
     expect(component.registroForm.valid).toBeTrue();
   });
+  
+   it('debería mostrar error si el campo nombre está vacío y fue tocado', () => {
+    const nombreCtrl = component.registroForm.get('nombre');
+    nombreCtrl?.markAsTouched();
+    fixture.detectChanges();
+
+    const errorDiv = fixture.debugElement.query(By.css('.invalid-feedback'));
+    expect(errorDiv.nativeElement.textContent).toContain('Este campo es obligatorio');
+  });
 }); 
+

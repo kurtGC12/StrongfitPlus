@@ -98,7 +98,6 @@
               "src/assets/css/main.css"
             ],
             "scripts": [
-              "src/assets/js/main.js",
               "src/assets/vendor/aos/aos.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
               "src/assets/vendor/glightbox/js/glightbox.min.js",

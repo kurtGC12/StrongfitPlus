@@ -57,7 +57,7 @@ export class RecuperarComponent implements OnInit {
       alert('No se encontró ningún usuario con ese correo.');
       return;
     }
-
+    // Actualizar la contraseña del usuario
     usuarios[index].password = nuevaPassword;
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 

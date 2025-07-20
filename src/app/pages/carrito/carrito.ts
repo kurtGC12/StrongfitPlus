@@ -58,12 +58,16 @@ export class CarritoComponent implements OnInit {
     this.carrito.splice(index, 1);
     this.actualizarCarrito();
   }
-
+/**
+   * @description Vacía el carrito y actualiza el localStorage.
+   */
   vaciarCarrito() {
     this.carrito = [];
     this.actualizarCarrito();
   }
-
+/**
+   * @description Finaliza la compra, reseteando el formulario y mostrando un mensaje de éxito.
+   */
   finalizarCompra() {
     this.pagoExitoso = false;
   }

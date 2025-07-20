@@ -32,7 +32,7 @@ export class ClienteFormComponent implements OnInit {
     this.clienteService.addCliente(this.cliente).subscribe(() => {
       alert('Cliente creado exitosamente');
       this.limpiarFormulario();
-      this.cargarClientes(); // recarga la lista
+      this.cargarClientes(); 
     });
   }
 

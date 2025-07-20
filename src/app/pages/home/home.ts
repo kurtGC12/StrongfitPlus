@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import AOS from 'aos';
 
+/**
+ * @description Componente principal de la aplicación.
+ * Muestra un mensaje de bienvenida al usuario logueado y permite navegar a otras secciones.
+ */ 
 @Component({
   selector: 'app-home',
   imports: [CommonModule],

@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
-
+/**
+ * @description Componente de login para usuarios.
+ * Permite a los usuarios iniciar sesión con su correo y contraseña.
+ * Si el usuario es administrador, redirige al panel de administración.
+ */
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -62,9 +66,9 @@ export class LoginComponent {
 
       // Redirigir según rol
       if (usuario.rol === 'admin') {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/adminPanel']);
       } else {
-        this.router.navigate(['/inicio/inicio']);
+        this.router.navigate(['/inicio-cliente']);
       }
 
     } else {
@@ -72,10 +76,17 @@ export class LoginComponent {
     }
     
   }
+  /**
+   * @description Inicializa el componente y agrega la clase 'login' al body.
+   * Esto es útil para aplicar estilos específicos al login.
+   */
   ngOnInit(): void {
   document.body.classList.add('login');
 }
-
+  /**
+   * @description Elimina la clase 'login' del body al destruir el componente.
+   * Esto es para evitar que los estilos del login afecten a otros componentes.
+   */
 ngOnDestroy(): void {
   document.body.classList.remove('login');
 }

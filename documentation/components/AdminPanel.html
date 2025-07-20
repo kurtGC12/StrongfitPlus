@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  Publico</li>
+  AdminPanel</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -116,7 +116,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/layouts/publico/publico.ts</code>
+    <code>src/app/layouts/admin-panel/admin-panel.ts</code>
 </p>
 
 
@@ -124,7 +124,7 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Contiene la estructura básica y las rutas para el acceso público.</p>
+        <p>Este componente sirve como contenedor para las rutas del panel de administración.</p>
 
     </p>
 
@@ -149,7 +149,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-publico</code></td>
+                <td class="col-md-9"><code>app-admin-panel</code></td>
             </tr>
 
 
@@ -165,7 +165,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./publico.html</code></td>
+                <td class="col-md-9"><code>./admin-panel.html</code></td>
             </tr>
 
 
@@ -194,81 +194,43 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 /**
- * @description Componente que sirve como layout público.
- * Contiene la estructura básica y las rutas para el acceso público.
+ * @description Componente del panel de administración.
+ * Este componente sirve como contenedor para las rutas del panel de administración.
  */
 @Component({
-  selector: &#x27;app-publico&#x27;,
+  selector: &#x27;app-admin-panel&#x27;,
   imports: [RouterModule],
-  templateUrl: &#x27;./publico.html&#x27;,
-  
+  templateUrl: &#x27;./admin-panel.html&#x27;,
 })
-export class Publico {
+export class AdminPanel {
 
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;header id&#x3D;&quot;header&quot; class&#x3D;&quot;header d-flex align-items-center sticky-top&quot;&gt;
-  &lt;div class&#x3D;&quot;container-fluid container-xl position-relative d-flex align-items-center justify-content-between&quot;&gt;
-
-    &lt;!-- Logo + nombre --&gt;
-    &lt;a routerLink&#x3D;&quot;/home&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;
-      &lt;img src&#x3D;&quot;/img/logo.png&quot; alt&#x3D;&quot;StrongFit Logo&quot; style&#x3D;&quot;height: 200px;&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;header class&#x3D;&quot;header d-flex align-items-center sticky-top&quot;&gt;
+  &lt;div class&#x3D;&quot;container-fluid container-xl d-flex justify-content-between align-items-center&quot;&gt;
+    &lt;a routerLink&#x3D;&quot;/&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;
+      &lt;img src&#x3D;&quot;/img/logo.png&quot; alt&#x3D;&quot;StrongFit Logo&quot; style&#x3D;&quot;height: 50px;&quot;&gt;
       &lt;h1 class&#x3D;&quot;sitename ms-2 mb-0&quot;&gt;StrongFit&lt;/h1&gt;
     &lt;/a&gt;
-
-    &lt;!-- Menú de navegación --&gt;
-    &lt;nav id&#x3D;&quot;navmenu&quot; class&#x3D;&quot;navmenu&quot;&gt;
+    &lt;nav class&#x3D;&quot;navmenu&quot;&gt;
       &lt;ul&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/home&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/nosotros&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/servicios&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/planes&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Planes&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/contacto&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/adminPanel/admin&quot;&gt;Admin&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/adminPanel/clientes&quot;&gt;Clientes&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;i class&#x3D;&quot;mobile-nav-toggle d-xl-none bi bi-list&quot;&gt;&lt;/i&gt;
     &lt;/nav&gt;
-
-    &lt;!-- Botones de acción --&gt;
     &lt;div class&#x3D;&quot;d-flex align-items-center gap-3&quot;&gt;
-      &lt;a class&#x3D;&quot;btn-getstarted&quot; routerLink&#x3D;&quot;/registro&quot;&gt;Inscríbete&lt;/a&gt;
-      &lt;a class&#x3D;&quot;bi bi-person-fill fs-4&quot; routerLink&#x3D;&quot;/login&quot; title&#x3D;&quot;Mi cuenta&quot;&gt;&lt;/a&gt;
+      &lt;a class&#x3D;&quot;bi bi-person fs-4&quot; title&#x3D;&quot;Mi cuenta&quot;&gt;&lt;/a&gt;
+      &lt;a routerLink&#x3D;&quot;/login&quot; class&#x3D;&quot;btn btn-secondary&quot;&gt;Cerrar sesión&lt;/a&gt;
     &lt;/div&gt;
-
   &lt;/div&gt;
 &lt;/header&gt;
 
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
 
-&lt;footer class&#x3D;&quot;footer dark-background&quot;&gt;
-  &lt;div class&#x3D;&quot;container footer-top&quot;&gt;
-    &lt;div class&#x3D;&quot;row gy-4&quot;&gt;
-      &lt;div class&#x3D;&quot;col-lg-5 col-md-12 footer-about&quot;&gt;
-        &lt;a routerLink&#x3D;&quot;/home&quot; class&#x3D;&quot;logo d-flex align-items-center&quot;&gt;&lt;span class&#x3D;&quot;sitename&quot;&gt;StrongFit&lt;/span&gt;&lt;/a&gt;
-        &lt;p&gt;Síguenos en redes sociales y forma parte de nuestra comunidad fitness.&lt;/p&gt;
-        &lt;div class&#x3D;&quot;social-links d-flex mt-4&quot;&gt;
-          &lt;a href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;bi bi-twitter-x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-          &lt;a href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;bi bi-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-          &lt;a href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;bi bi-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;col-lg-2 col-6 footer-links&quot;&gt;
-        &lt;h4&gt;Link&lt;/h4&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/home&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/servicios&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a routerLink&#x3D;&quot;/planes&quot;&gt;Planes&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;col-lg-3 col-md-12 footer-contact&quot;&gt;
-        &lt;h4&gt;Contacto&lt;/h4&gt;
-        &lt;p class&#x3D;&quot;mt-4&quot;&gt;&lt;strong&gt;Teléfono:&lt;/strong&gt; +569 XXXX XXXX&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; ejemplo&amp;#64;gmail.com&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+&lt;footer class&#x3D;&quot;footer dark-background text-center py-3&quot;&gt;
 &lt;/footer&gt;
 </code></pre>
     </div>
@@ -299,10 +261,10 @@ export class Publico {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><header id="header" class="header d-flex align-items-center sticky-top">  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">    <!-- Logo + nombre -->    <a routerLink="/home" class="logo d-flex align-items-center">      <img src="/img/logo.png" alt="StrongFit Logo" style="height: 200px;">      <h1 class="sitename ms-2 mb-0">StrongFit</h1>    </a>    <!-- Menú de navegación -->    <nav id="navmenu" class="navmenu">      <ul>        <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>        <li><a routerLink="/nosotros" routerLinkActive="active">Nosotros</a></li>        <li><a routerLink="/servicios" routerLinkActive="active">Servicios</a></li>        <li><a routerLink="/planes" routerLinkActive="active">Planes</a></li>        <li><a routerLink="/contacto" routerLinkActive="active">Contacto</a></li>      </ul>      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>    </nav>    <!-- Botones de acción -->    <div class="d-flex align-items-center gap-3">      <a class="btn-getstarted" routerLink="/registro">Inscríbete</a>      <a class="bi bi-person-fill fs-4" routerLink="/login" title="Mi cuenta"></a>    </div>  </div></header><router-outlet></router-outlet><footer class="footer dark-background">  <div class="container footer-top">    <div class="row gy-4">      <div class="col-lg-5 col-md-12 footer-about">        <a routerLink="/home" class="logo d-flex align-items-center"><span class="sitename">StrongFit</span></a>        <p>Síguenos en redes sociales y forma parte de nuestra comunidad fitness.</p>        <div class="social-links d-flex mt-4">          <a href="#"><i class="bi bi-twitter-x"></i></a>          <a href="#"><i class="bi bi-facebook"></i></a>          <a href="#"><i class="bi bi-instagram"></i></a>        </div>      </div>      <div class="col-lg-2 col-6 footer-links">        <h4>Link</h4>        <ul>          <li><a routerLink="/home">Inicio</a></li>          <li><a routerLink="/servicios">Servicios</a></li>          <li><a routerLink="/planes">Planes</a></li>        </ul>      </div>      <div class="col-lg-3 col-md-12 footer-contact">        <h4>Contacto</h4>        <p class="mt-4"><strong>Teléfono:</strong> +569 XXXX XXXX</p>        <p><strong>Email:</strong> ejemplo&#64;gmail.com</p>      </div>    </div>  </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><header class="header d-flex align-items-center sticky-top">  <div class="container-fluid container-xl d-flex justify-content-between align-items-center">    <a routerLink="/" class="logo d-flex align-items-center">      <img src="/img/logo.png" alt="StrongFit Logo" style="height: 50px;">      <h1 class="sitename ms-2 mb-0">StrongFit</h1>    </a>    <nav class="navmenu">      <ul>        <li><a routerLink="/adminPanel/admin">Admin</a></li>        <li><a routerLink="/adminPanel/clientes">Clientes</a></li>      </ul>    </nav>    <div class="d-flex align-items-center gap-3">      <a class="bi bi-person fs-4" title="Mi cuenta"></a>      <a routerLink="/login" class="btn btn-secondary">Cerrar sesión</a>    </div>  </div></header><router-outlet></router-outlet><footer class="footer dark-background text-center py-3"></footer></div>'
     var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminPanel', 'selector': 'app-admin-panel'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'Publico'};
+    var ACTUAL_COMPONENT = {'name': 'AdminPanel'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -348,7 +310,7 @@ export class Publico {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'Publico.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminPanel.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

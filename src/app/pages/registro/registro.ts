@@ -16,12 +16,18 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.css'],
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule],
+  providers: [FormBuilder]
 })
 export class RegistroComponent {
-
+  /**
+   * @description Formulario de registro con validaciones.
+   */ 
   registroForm: FormGroup;
-
+  /**
+   * @description Constructor que inicializa el formulario de registro.
+   * Incluye validaciones para los campos requeridos y patrones específicos.
+   */
   constructor(private fb: FormBuilder) {
     this.registroForm = this.fb.group({
       nombre: ['', Validators.required],
@@ -38,13 +44,21 @@ export class RegistroComponent {
       validators: this.passwordsIguales
     });
   }
-
+  /**
+   * @description Valida que la fecha de nacimiento sea mayor a 13 años.
+   * @param control - Control del formulario que contiene la fecha de nacimiento.
+   * @returns Un objeto de error si la edad es menor a 13 años, o null si es válida.
+   */
   passwordsIguales(group: FormGroup) {
     const pass = group.get('password')?.value;
     const confirm = group.get('confirmarPassword')?.value;
     return pass === confirm ? null : { notSame: true };
   }
-
+  /**
+   * @description Valida que la fecha de nacimiento sea mayor a 13 años.
+   * @param control - Control del formulario que contiene la fecha de nacimiento.
+   * @returns Un objeto de error si la edad es menor a 13 años, o null si es válida.
+   */
   enviar() {
     if (this.registroForm.valid) {
       console.log('Datos enviados:', this.registroForm.value);

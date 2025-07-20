@@ -124,6 +124,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Permite a los usuarios iniciar sesión con su correo y contraseña.
+Si el usuario es administrador, redirige al panel de administración.</p>
+
+    </p>
 
 
 
@@ -251,7 +259,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/login/login.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/login/login.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -330,8 +338,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">src/app/pages/login/login.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/pages/login/login.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -367,8 +375,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/app/pages/login/login.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/app/pages/login/login.ts:52</a></div>
                         </td>
                     </tr>
 
@@ -404,14 +412,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="79"
-                                    class="link-to-prism">src/app/pages/login/login.ts:79</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="90"
+                                    class="link-to-prism">src/app/pages/login/login.ts:90</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Esto es para evitar que los estilos del login afecten a otros componentes.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -441,14 +451,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="75"
-                                    class="link-to-prism">src/app/pages/login/login.ts:75</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/pages/login/login.ts:83</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Esto es útil para aplicar estilos específicos al login.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -483,7 +495,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/login/login.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/login/login.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -509,7 +521,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/login/login.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/login/login.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -526,7 +538,11 @@
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { ReactiveFormsModule, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 import { RouterModule, Router } from &#x27;@angular/router&#x27;;
-
+/**
+ * @description Componente de login para usuarios.
+ * Permite a los usuarios iniciar sesión con su correo y contraseña.
+ * Si el usuario es administrador, redirige al panel de administración.
+ */
 @Component({
   selector: &#x27;app-login&#x27;,
   standalone: true,
@@ -586,9 +602,9 @@ export class LoginComponent {
 
       // Redirigir según rol
       if (usuario.rol &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;) {
-        this.router.navigate([&#x27;/admin&#x27;]);
+        this.router.navigate([&#x27;/adminPanel&#x27;]);
       } else {
-        this.router.navigate([&#x27;/inicio/inicio&#x27;]);
+        this.router.navigate([&#x27;/inicio-cliente&#x27;]);
       }
 
     } else {
@@ -596,10 +612,17 @@ export class LoginComponent {
     }
     
   }
+  /**
+   * @description Inicializa el componente y agrega la clase &#x27;login&#x27; al body.
+   * Esto es útil para aplicar estilos específicos al login.
+   */
   ngOnInit(): void {
   document.body.classList.add(&#x27;login&#x27;);
 }
-
+  /**
+   * @description Elimina la clase &#x27;login&#x27; del body al destruir el componente.
+   * Esto es para evitar que los estilos del login afecten a otros componentes.
+   */
 ngOnDestroy(): void {
   document.body.classList.remove(&#x27;login&#x27;);
 }
@@ -680,7 +703,7 @@ ngOnDestroy(): void {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><main class="container my-5">  <form [formGroup]="form" (ngSubmit)="login()" id="form-login" class="formulario-strongfit">    <h1 class="text-center mb-4">Iniciar Sesión</h1>    <!-- Email -->    <div class="mb-3">      <label for="email" class="form-label">Correo electrónico</label>      <input type="email" id="email" class="form-control" formControlName="email" placeholder="correo@ejemplo.com">      <div *ngIf="form.get(\'email\')?.invalid && form.get(\'email\')?.touched" class="text-danger small">        <div *ngIf="form.get(\'email\')?.errors?.[\'required\']">El correo es obligatorio.</div>        <div *ngIf="form.get(\'email\')?.errors?.[\'email\']">Debe tener formato válido.</div>      </div>    </div>    <!-- Contraseña -->    <div class="mb-3">      <label for="password" class="form-label">Contraseña</label>      <input type="password" id="password" class="form-control" formControlName="password" placeholder="Contraseña">      <div *ngIf="form.get(\'password\')?.invalid && form.get(\'password\')?.touched" class="text-danger small">        <div *ngIf="form.get(\'password\')?.errors?.[\'required\']">La contraseña es obligatoria.</div>        <div *ngIf="form.get(\'password\')?.errors?.[\'minlength\']">Debe tener al menos 6 caracteres.</div>      </div>    </div>    <!-- Botón -->    <button type="submit" class="btn btn-primary w-100">Entrar</button>    <!-- Enlaces -->    <div class="mt-3 text-center">      <a routerLink="/recuperar">¿Olvidaste tu contraseña?</a><br>      <a routerLink="/registro">¿No tienes cuenta? Regístrate</a>    </div>  </form></main></div>'
-    var COMPONENTS = [{'name': 'Admin', 'selector': 'app-admin'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminPanel', 'selector': 'app-admin-panel'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'Cliente', 'selector': 'app-cliente'},{'name': 'ClienteFormComponent', 'selector': 'app-clientes-gym'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InicioClienteComponent', 'selector': 'app-inicio-cliente'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'PlanesComponent', 'selector': 'app-planes'},{'name': 'Publico', 'selector': 'app-publico'},{'name': 'RecuperarComponent', 'selector': 'app-recuperar'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'ServiciosComponent', 'selector': 'app-servicios'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

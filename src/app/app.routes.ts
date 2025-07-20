@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { Publico } from './layouts/publico/publico';
 import { Cliente} from './layouts/cliente/cliente';
-import { Admin } from './layouts/admin/admin';
+import { AdminPanel } from './layouts/admin-panel/admin-panel';
 
 
 import { HomeComponent } from './pages/home/home';
@@ -16,6 +16,7 @@ import { CarritoComponent } from './pages/carrito/carrito';
 import { AdminComponent } from './pages/admin/admin';
 import { ServiciosComponent } from './pages/servicios/servicios';
 import {  ClienteFormComponent } from './pages/clientes-gym/clientes-gym';
+
 
 export const routes: Routes = [
   {
@@ -34,14 +35,14 @@ export const routes: Routes = [
     path: 'inicio',
     component: Cliente,
     children: [
-      { path: 'inicio', component: InicioClienteComponent },
+      { path: 'iniciocliente', component: InicioClienteComponent },
       { path: 'perfil', component: PerfilComponent },
       { path: 'carrito', component: CarritoComponent }
     ]
   },
  {
-    path: 'admin',
-    component: Admin,
+    path: 'adminPanel',
+    component: AdminPanel,
     children: [
       { path: 'admin', component: AdminComponent },
       { path: 'clientes', component: ClienteFormComponent }

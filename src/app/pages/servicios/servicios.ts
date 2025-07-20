@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-
 /**
-   * @description Componente que muestras los servicios del gym.
-   */
+ * @description Componente que muestra los servicios disponibles en la aplicación.
+ * Permite a los usuarios explorar y acceder a diferentes servicios ofrecidos.
+ */
 @Component({
   selector: 'app-servicios',
   standalone: true,
