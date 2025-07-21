@@ -1,30 +1,29 @@
 
 
 # Etapa 1: Compilación Angular
-# Utiliza una imagen de Node.js para compilar la aplicación Angular
 FROM node:22.12.0 AS builder
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 RUN npm install
 
-
 COPY . .
 
-RUN npm run build 
+RUN npm run build --prod
 
 
-# Etapa 2: Producción con Nginx 
-# Utiliza una imagen de Nginx para servir la aplicación compilada
-FROM node:22.12.0 AS production
+# Etapa 2: Producción con Nginx
+FROM nginx:stable-alpine
 
-WORKDIR /app
+# Borra configuración default
+RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=builder /app/dist/StrongfitPlus /app/dist/StrongfitPlus-angular
-COPY --from=builder /app/dist /app/node_modules
+# Copia la app compilada al folder de nginx
+COPY --from=builder /app/dist/StrongfitPlus /usr/share/nginx/html
 
-EXPOSE 8080
 
-CMD ["node", "-g","dist/StrongfitPlus/serve/serve.mjs","daemon off;"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
